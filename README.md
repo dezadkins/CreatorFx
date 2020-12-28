@@ -4,4 +4,4 @@
 
 Database Schema
 
-![](public/databaseSchema.png)
+![](frontend/public/databaseSchema.png)
