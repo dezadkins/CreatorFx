@@ -1,0 +1,93 @@
+/* <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet"> */
+.login-form {
+  margin: auto;
+  padding: 20px;
+  /* background-color: rgb(43, 40, 40); */
+  width: 500px;
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-form__input-fields {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 300px;
+}
+
+.login-form li {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(243, 123, 54);
+}
+
+.login-form ul {
+  max-height: 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  padding-left: 25px;
+  margin: 10px;
+  overflow-y: scroll;
+  background-color: rgb(98, 68, 73);
+  border: 1px solid rgb(15, 122, 165);
+  border-radius: 10px;
+
+  list-style-type: circle;
+}
+
+.navbar__button {
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  width: 90px;
+  height: 55px;
+  margin-top: 25px;
+  margin-right: 5%;
+  background-color: #ff0031;
+  font-family: "Roboto Slab", serif;
+}
+.navbar__button:hover {
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  width: 100px;
+  height: 55px;
+  margin-right: 5%;
+  background-color: #ff0031;
+  font-family: "Roboto Slab", serif;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.navbar__button-create {
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  width: 200px;
+  height: 55px;
+  margin-right: 5%;
+  margin-top: 25px;
+
+  background-color: #ff0031;
+  font-family: "Roboto Slab", serif;
+}
+.navbar__button-create:hover {
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  width: 190px;
+  height: 55px;
+
+  background-color: #ff0031;
+  font-family: "Roboto Slab", serif;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}

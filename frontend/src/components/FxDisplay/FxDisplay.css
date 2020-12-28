@@ -1,0 +1,28 @@
+/* .mid-section {
+  display: flex;
+  margin: auto;
+  width: 70%;
+  height: 600px;
+  background-color: blue;
+}
+
+.mid-section .wrapper {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  border: 2px solid black;
+} */
+.footer__box {
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+
+  width: 99%;
+  height: 100%;
+  /* border: 1px solid white; */
+}
+
+.home__container {
+  background-color: black;
+  min-width: 100%;
+  max-width: 100%;
+}
