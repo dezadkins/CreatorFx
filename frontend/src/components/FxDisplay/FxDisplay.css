@@ -11,18 +11,21 @@
   grid-template-columns: 200px 200px 200px;
   border: 2px solid black;
 } */
-.footer__box {
+.home__footer {
+  position: fixed;
   display: flex;
   align-items: flex-end;
-  position: fixed;
 
   width: 99%;
   height: 100%;
-  /* border: 1px solid white; */
 }
 
 .home__container {
-  background-color: black;
+  position: fixed;
+  background-color: rgb(126, 48, 48);
+  right: 0;
+  bottom: 0;
   min-width: 100%;
-  max-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }

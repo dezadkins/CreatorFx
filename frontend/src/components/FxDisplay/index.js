@@ -13,7 +13,7 @@ const FxDisplay = () => {
         <div className="navbar__logo" onClick={logoClick}>
           <img className="logo" src="/CFxLogo.png" alt="logo" />
         </div>
-        <h1>Fx Display</h1>
+        <h1 style={{ color: "white" }}>Fx Display</h1>
         {/* <ProfileButton /> */}
 
         {/* <div className="mid-section">
@@ -27,7 +27,7 @@ const FxDisplay = () => {
         </div>
       </div> */}
         <div>
-          <Footer />
+          <Footer className="home__footer" />
         </div>
       </div>
     </>

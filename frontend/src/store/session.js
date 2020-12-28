@@ -1,5 +1,6 @@
 import { fetch } from "./csrf";
 
+const LOGIN_USER = "LOGIN_USER";
 const SET_USER = "session/setUser";
 const REMOVE_USER = "DESTROY_SESSION";
 
@@ -18,22 +19,23 @@ const removeUser = () => {
 };
 
 //THUNK ACTION CREATOR *******************
-export const loginUser = (user) => async (dispatch) => {
-  const { credential, password } = user;
-
+export const loginUser = ({ credential, password }) => async (dispatch) => {
   const res = await fetch("/api/session", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      credential,
-      password,
-    }),
+    body: JSON.stringify({ credential, password }),
   });
 
-  dispatch(setUser(res.data.user));
-  return res;
+  const { user } = res.data;
+
+  dispatch(setUser(user));
+
+  return {
+    type: LOGIN_USER,
+    payload: user,
+  };
 };
 
 export const restoreUser = () => async (dispatch) => {

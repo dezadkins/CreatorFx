@@ -1,5 +1,11 @@
 import Cookies from "js-cookie";
 
+//
+// ─── FETCH FUNCTION ─────────────────────────────────────────────────────────────
+//
+// Creates a fetch function that is wrapped in the window global object in order
+// to set an XSRF-TOKEN header on the fetch call
+
 export async function fetch(url, options = {}) {
   // set options.headers to an empty object if there is no headers
   options.headers = options.headers || {};
