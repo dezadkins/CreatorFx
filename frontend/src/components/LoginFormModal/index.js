@@ -10,7 +10,7 @@ export default function LoginFormModal() {
   return (
     <>
       <button
-        className="navbar__button"
+        className="landing-navbar__button"
         onClick={() => {
           setShowModal(true);
         }}

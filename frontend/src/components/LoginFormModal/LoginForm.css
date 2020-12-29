@@ -38,31 +38,28 @@
 
   list-style-type: circle;
 }
+/* --------------------LANDING PAGE NAVBAR ----------------------- */
 
-/*
- * ─── HOME NAVBAR BUTTON FORMATTING ──────────────────────────────────────────────────────
- */
-
-.navbar__button {
+.landing-navbar__button {
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   color: white;
   width: 90px;
-  height: 55px;
+  height: 40px;
   margin-top: 25px;
   margin-right: 5%;
   background-color: #ff0031;
   font-family: "Roboto Slab", serif;
   cursor: pointer;
 }
-.navbar__button:hover {
+.landing-navbar__button:hover {
   border-radius: 5px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   width: 100px;
-  height: 55px;
+  height: 45px;
   margin-right: 5%;
   background-color: #ff0031;
   font-family: "Roboto Slab", serif;
@@ -73,11 +70,11 @@
 
 .navbar__button-create {
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   color: white;
-  width: 200px;
-  height: 55px;
+  width: 170px;
+  height: 40px;
   margin-right: 5%;
   margin-top: 25px;
 
@@ -87,11 +84,11 @@
 }
 .navbar__button-create:hover {
   border-radius: 5px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   width: 190px;
-  height: 55px;
+  height: 45px;
 
   background-color: #ff0031;
   font-family: "Roboto Slab", serif;

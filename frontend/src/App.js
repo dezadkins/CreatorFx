@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation/";
 import LoginFormPage from "./components/LoginFormPage";
 import LandingPage from "./components/LandingPage";
 import FxDisplay from "./components/FxDisplay";
+import GridLayout from "./components/GridLayout";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/home">
             <FxDisplay />
+          </Route>
+          <Route path="/uploads">
+            <GridLayout />
           </Route>
           {/* <Route path="/login">
             <LoginFormPage />
