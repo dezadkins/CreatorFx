@@ -50,6 +50,7 @@
   margin-right: 5%;
   background-color: #ff0031;
   font-family: "Roboto Slab", serif;
+  cursor: pointer;
 }
 .navbar__button:hover {
   border-radius: 5px;
@@ -63,6 +64,7 @@
   font-family: "Roboto Slab", serif;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  cursor: pointer;
 }
 
 .navbar__button-create {
@@ -77,6 +79,7 @@
 
   background-color: #ff0031;
   font-family: "Roboto Slab", serif;
+  cursor: pointer;
 }
 .navbar__button-create:hover {
   border-radius: 5px;
@@ -90,4 +93,11 @@
   font-family: "Roboto Slab", serif;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  cursor: pointer;
+}
+
+.button--primary {
+  color: black;
+  /* background-color: rgb(50, 123, 248); */
+  cursor: pointer;
 }

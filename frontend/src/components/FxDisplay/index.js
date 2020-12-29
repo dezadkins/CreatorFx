@@ -26,8 +26,8 @@ const FxDisplay = () => {
           <div>5</div>
         </div>
       </div> */}
-        <div>
-          <Footer className="home__footer" />
+        <div className="home__footer">
+          <Footer />
         </div>
       </div>
     </>

@@ -1,31 +1,19 @@
-/* .mid-section {
-  display: flex;
-  margin: auto;
-  width: 70%;
-  height: 600px;
-  background-color: blue;
-}
-
-.mid-section .wrapper {
-  display: grid;
-  grid-template-columns: 200px 200px 200px;
-  border: 2px solid black;
-} */
-.home__footer {
-  position: fixed;
-  display: flex;
-  align-items: flex-end;
-
-  width: 99%;
-  height: 100%;
-}
-
 .home__container {
   position: fixed;
-  background-color: rgb(126, 48, 48);
+  background: rgb(176, 158, 158);
+  background: linear-gradient(
+    0deg,
+    rgba(176, 158, 158, 1) 0%,
+    rgba(62, 62, 57, 1) 100%
+  );
   right: 0;
   bottom: 0;
+
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
 }
+
+/* .home__footer {
+  border: 1px solid black;
+} */

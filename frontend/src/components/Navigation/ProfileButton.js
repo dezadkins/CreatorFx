@@ -1,79 +1,25 @@
-// import React, { useState, useEffect } from "react";
-// import { useDispatch } from "react-redux";
-// import * as sessionActions from "../../store/session";
-
-// function ProfileButton({ user }) {
-//   const dispatch = useDispatch();
-//   const [showMenu, setShowMenu] = useState(false);
-
-//   const openMenu = () => {
-//     if (showMenu) return;
-//     setShowMenu(true);
-//   };
-
-//   useEffect(() => {
-//     if (!showMenu) return;
-
-//     const closeMenu = () => {
-//       setShowMenu(false);
-//     };
-
-//     document.addEventListener("click", closeMenu);
-
-//     return () => document.removeEventListener("click", closeMenu);
-//   }, [showMenu]);
-
-//   const logout = (e) => {
-//     e.preventDefault();
-//     dispatch(sessionActions.logout());
-//   };
-
-//   return (
-//     <>
-//       <button onClick={openMenu}>
-//         <i className="fas fa-user-circle" />
-//       </button>
-//       {showMenu && (
-//         <ul className="profile-dropdown">
-//           <li>{user.username}</li>
-//           <li>{user.email}</li>
-//           <li>
-//             <button onClick={logout}>Log Out</button>
-//           </li>
-//         </ul>
-//       )}
-//     </>
-//   );
-// }
-
-// export default ProfileButton;
-
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import * as sessionActions from "../../store/session";
 import { Link, useHistory } from "react-router-dom";
-
-import { logout } from "../../store/session";
-import { changeView, clearView } from "../../store/view";
 
 import { fetch } from "../../store/csrf";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
-export default function ProfileButton() {
+function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const history = useHistory();
-
   const [showMenu, setShowMenu] = useState(false);
   const [profilePic, setProfilePic] = useState(null);
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  const openMenu = (e) => {
-    if (!showMenu) {
-      setShowMenu(true);
-    }
+  const openMenu = () => {
+    if (showMenu) return;
+    setShowMenu(true);
   };
 
   useEffect(() => {
@@ -85,9 +31,7 @@ export default function ProfileButton() {
 
     document.addEventListener("click", closeMenu);
 
-    return () => {
-      document.removeEventListener("click", closeMenu);
-    };
+    return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
   useEffect(() => {
@@ -97,16 +41,9 @@ export default function ProfileButton() {
     })();
   }, [sessionUser]);
 
-  const handleLogout = (e) => {
+  const logout = (e) => {
     e.preventDefault();
-    dispatch(logout());
-    dispatch(clearView());
-    history.push("/");
-  };
-
-  const setMyEvents = (e) => {
-    e.preventDefault();
-    dispatch(changeView(`MY-EVENTS`));
+    dispatch(sessionActions.logout());
     history.push("/");
   };
 
@@ -144,16 +81,13 @@ export default function ProfileButton() {
             <div className="navbar__dropdown-text">{sessionUser.email}</div>
           </div>
           <div className="navbar__dropdown-links">
-            <Link className="navbar__dropdown-link" to="/">
-              Create A New Collection
-            </Link>
-            <div className="navbar__dropdown-link" onClick={setMyEvents}>
-              My Collection
-            </div>
-            <Link className="navbar__dropdown-link" to="/">
+            <Link className="navbar__dropdown-link" to="/profile">
               My Profile
             </Link>
-            <div className="navbar__dropdown-link" onClick={handleLogout}>
+            <Link className="navbar__dropdown-link" to="/newcollection">
+              Create New Collection
+            </Link>
+            <div className="navbar__dropdown-link" onClick={logout}>
               Log Out
             </div>
           </div>
@@ -162,3 +96,5 @@ export default function ProfileButton() {
     </>
   );
 }
+
+export default ProfileButton;
