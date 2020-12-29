@@ -1,0 +1,29 @@
+.side__nav-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+
+  width: 400px;
+  position: absolute;
+  right: 130px;
+  top: 45px;
+  border-radius: 3px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.side__nav-item {
+  padding: 0 10px;
+  color: #f5f7f9;
+}
+
+.side__nav-link {
+  color: #f5f7f9;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-title {
+  text-decoration: none;
+  color: #f6f7f9;
+}

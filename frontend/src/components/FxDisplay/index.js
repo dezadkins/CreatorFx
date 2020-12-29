@@ -1,6 +1,7 @@
 import "./FxDisplay.css";
 import Footer from "../Footer";
 import { useHistory } from "react-router-dom";
+import SideNav from "../SideNav";
 // import ProfileButton from "./components/Navigation/ProfileButton";
 const FxDisplay = () => {
   const history = useHistory();
@@ -10,6 +11,7 @@ const FxDisplay = () => {
   return (
     <>
       <div className="home__container">
+        <SideNav />
         <div className="navbar__logo" onClick={logoClick}>
           <img className="logo" src="/CFxLogo.png" alt="logo" />
         </div>
