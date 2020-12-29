@@ -3,6 +3,7 @@ import * as sessionActions from "../../store/session";
 import { NavLink, useHistory } from "react-router-dom";
 import { logout } from "../../store/session";
 import "./SideNav.css";
+import SearchBar from "../Navigation/SearchBar";
 
 export default function SideNav() {
   const dispatch = useDispatch();
@@ -12,6 +13,10 @@ export default function SideNav() {
     e.preventDefault();
     dispatch(sessionActions.logout());
     history.push("/");
+  };
+
+  const logoClick = (e) => {
+    history.push("/home");
   };
 
   return (
@@ -34,8 +39,11 @@ export default function SideNav() {
         </div>
         <div className="side__nav-item">
           <div className="side__nav-link">
-            <span className="nav-title">Search</span>
+            <SearchBar />
           </div>
+        </div>
+        <div className="side__nav-item" onClick={logoClick}>
+          <img className="logo" src="/CFxLogo.png" alt="logo" />
         </div>
       </div>
     </>

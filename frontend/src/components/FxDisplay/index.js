@@ -12,10 +12,7 @@ const FxDisplay = () => {
     <>
       <div className="home__container">
         <SideNav />
-        <div className="navbar__logo" onClick={logoClick}>
-          <img className="logo" src="/CFxLogo.png" alt="logo" />
-        </div>
-        <h1 style={{ color: "white" }}>Fx Display</h1>
+
         {/* <ProfileButton /> */}
 
         {/* <div className="mid-section">

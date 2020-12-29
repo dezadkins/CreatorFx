@@ -39,6 +39,10 @@
   list-style-type: circle;
 }
 
+/*
+ * ─── HOME NAVBAR BUTTON FORMATTING ──────────────────────────────────────────────────────
+ */
+
 .navbar__button {
   border-radius: 5px;
   font-size: 20px;
