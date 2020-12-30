@@ -34,6 +34,7 @@
 
 /* Sections of Layout
 -------------------------------------- */
+
 body {
   background: rgb(176, 158, 158);
   background: linear-gradient(
@@ -60,6 +61,8 @@ body {
 .sidebar {
   grid-row-end: span 2;
   border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(223, 208, 208, 0.2),
+    0 6px 20px 0 rgba(205, 134, 134, 0.19);
 }
 /* .content {
   grid-column: 2;
@@ -88,4 +91,57 @@ body {
   min-height: 100vh;
   width: 100%;
   border: 1px solid black;
+  align-content: center;
 }
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
+  padding: 2% 2% 0;
+  height: 25%;
+  text-align: justify;
+  font-size: 15px;
+  background: #68b8c4;
+  border: 3px solid black;
+}
+
+.inner-grid:after {
+  content: "";
+  display: inline-block;
+  width: 50%;
+}
+
+.inner-grid .item {
+  text-align: center;
+  background: #03899c;
+  margin-bottom: 2%;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  /*display: none; <-- uncomment this rule for use with MixItUp */
+}
+
+.inner-grid .item:before {
+  content: "";
+  display: inline-block;
+  padding-top: 60%;
+}
+
+.main-content > p {
+  color: white;
+}
+
+/* @media all and (min-width: 420px) {
+  .inner-grid .item,
+  .inner-grid {
+    width: 32%;
+  }
+}
+
+@media all and (min-width: 640px) {
+  .inner-grid .item,
+  .inner-grid {
+    width: 23.5%;
+  }
+} */

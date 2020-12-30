@@ -16,7 +16,18 @@ export default function GridLayout() {
             <p>header</p>
           </div>
           <p>main</p>
-          <div></div>
+          <div class="inner-grid">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+          <div class="inner-grid">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
         </div>
       </div>
       {/* <div className="container">

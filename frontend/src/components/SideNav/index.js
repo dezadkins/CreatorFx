@@ -23,7 +23,7 @@ export default function SideNav() {
     <>
       <div>
         <div className="side__nav-item" onClick={logoClick}>
-          <img className="logo" src="/CFxLogo.png" alt="logo" />
+          <img className="side__nav-logo" src="/CFxLogo.png" alt="logo" />
         </div>
         <div className="side__nav-item">
           <div className="side__nav-link">
