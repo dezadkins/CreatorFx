@@ -1,12 +1,15 @@
+import SideNav from "../SideNav";
 import "./GridLayout.css";
-
+import "../SideNav/SideNav.css";
 export default function GridLayout() {
   return (
     <>
       {/* <div></div> */}
       <div className="container">
         <div className="sidebar">
-          <p>sidebar 1</p>
+          <div className="side__nav-container">
+            <SideNav />
+          </div>
         </div>
         <div className="main-content">
           <div className="header ">

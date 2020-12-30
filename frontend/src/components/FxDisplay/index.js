@@ -10,23 +10,25 @@ const FxDisplay = () => {
   };
   return (
     <>
-      <div className="page-container">
-        <div className="main-section">
-          <div className="section">
-            <h2 className="section-title">Trending</h2>
-            <div className="section-content"></div>
+      {/* <div></div> */}
+      <div className="container">
+        <div className="sidebar">
+          <div className="side__nav-container">
+            <SideNav />
           </div>
-          <div className="section">
-            <h2 className="section-title">Newly Added</h2>
-            <div className="section-content"></div>
+        </div>
+        <div className="main-content">
+          <div className="header ">
+            <p>header</p>
           </div>
+          <p>main</p>
+          <div></div>
         </div>
       </div>
-      {/* <div className="home__container">
-        <SideNav />
-        <div className="home__footer">
-          <Footer />
-        </div>
+      {/* <div className="container">
+        <footer class="footer">
+          <p>footer</p>
+        </footer>
       </div> */}
     </>
   );

@@ -45,31 +45,33 @@ export const restoreUser = () => async (dispatch) => {
   return res;
 };
 
-export const signup = (user) => async (dispatch) => {
-  const { profilePic, username, email, password } = user;
-  const formData = new FormData();
-  formData.append("username", username);
-  formData.append("email", email);
-  formData.append("password", password);
-  if (profilePic) {
-    formData.append("profilePic", profilePic);
-  }
+export const signup = (user) => {
+  return async (dispatch) => {
+    const { profilePic, username, email, password } = user;
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("email", email);
+    formData.append("password", password);
+    if (profilePic) {
+      formData.append("profilePic", profilePic);
+    }
 
-  const config = {
-    headers: {
-      "content-type": "multipart/form-data",
-    },
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    };
+
+    return axios
+      .post("/api/users/", formData, config)
+      .then((res) => {
+        const user = res.data;
+        return dispatch(setUser(user));
+      })
+      .catch((err) => {
+        return err.response;
+      });
   };
-
-  return axios
-    .post("/api/users/", formData, config)
-    .then((res) => {
-      const user = res.data;
-      return dispatch(setUser(user));
-    })
-    .catch((err) => {
-      return err.response;
-    });
 };
 
 export const logout = () => async (dispatch) => {

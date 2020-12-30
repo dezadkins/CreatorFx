@@ -15,7 +15,7 @@
 .signup-form__inputs-container {
   display: flex;
   flex-direction: row;
-  margin: 10px 40px;
+  /* margin: 10px 40px; */
 }
 
 .signup-form__input-fields {
@@ -43,7 +43,7 @@
   color: red;
 }
 
-.signup-form ul {
+/* .signup-form ul {
   max-height: 80px;
   display: flex;
   flex-direction: column;
@@ -56,4 +56,4 @@
   border-radius: 10px;
 
   list-style-type: circle;
-}
+} */

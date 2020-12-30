@@ -1,4 +1,4 @@
-.side__nav-container {
+/* .side__nav-container {
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
@@ -10,7 +10,7 @@
   border-radius: 3px;
   background-color: transparent;
   z-index: 3;
-}
+} */
 
 .side__nav-item {
   padding: 0 10px;

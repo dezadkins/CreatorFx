@@ -21,10 +21,18 @@ export default function SideNav() {
 
   return (
     <>
-      <div className="side__nav-container">
+      <div>
+        <div className="side__nav-item" onClick={logoClick}>
+          <img className="logo" src="/CFxLogo.png" alt="logo" />
+        </div>
         <div className="side__nav-item">
-          <NavLink className="side__nav-link" to={`/collection`}>
-            <span className="nav-title">My Collection</span>
+          <div className="side__nav-link">
+            <SearchBar />
+          </div>
+        </div>
+        <div className="side__nav-item">
+          <NavLink className="side__nav-link" to={`/home`}>
+            <span className="nav-title">Home</span>
           </NavLink>
         </div>
         <div className="side__nav-item">
@@ -33,17 +41,9 @@ export default function SideNav() {
           </NavLink>
         </div>
         <div className="side__nav-item">
-          <NavLink className="side__nav-link" to={`/home`}>
-            <span className="nav-title">Home</span>
+          <NavLink className="side__nav-link" to={`/collection`}>
+            <span className="nav-title">My Collection</span>
           </NavLink>
-        </div>
-        <div className="side__nav-item">
-          <div className="side__nav-link">
-            <SearchBar />
-          </div>
-        </div>
-        <div className="side__nav-item" onClick={logoClick}>
-          <img className="logo" src="/CFxLogo.png" alt="logo" />
         </div>
       </div>
     </>
