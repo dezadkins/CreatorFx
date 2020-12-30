@@ -98,7 +98,13 @@
 }
 
 .button--primary {
+  display: flex;
+  justify-content: center;
   color: black;
-  /* background-color: rgb(50, 123, 248); */
+  width: 15%;
+  height: 30px;
+  padding: 5px 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
   cursor: pointer;
 }
