@@ -4,22 +4,17 @@ const NAME_OF_BUCKET = "creatorfx";
 const multer = require("multer");
 
 if (process.env.NODE_ENV !== "production") {
-  AWS.config.loadFromPath("./credentiales.json");
+  AWS.config.loadFromPath("./credentials.json");
 }
-// else {
-//  make sure to set environment variables in production for:
-//  AWS_ACCESS_KEY_ID
-//  AWS_SECRET_ACCESS_KEY
-//  and aws will automatically use those environment variables
-// }
 const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
 // --------------------------- Public UPLOAD ------------------------
 
-const singlePublicFileUpload = async (file) => {
+const singlePublicFileUpload = async (file, folder = "") => {
   const { originalname, mimetype, buffer } = await file;
   const path = require("path");
   // name of the file in your S3 bucket will be the date in ms plus the extension name
-  const Key = new Date().getTime().toString() + path.extname(originalname);
+  const Key =
+    folder + "/" + new Date().getTime().toString() + path.extname(originalname);
   const uploadParams = {
     Bucket: NAME_OF_BUCKET,
     Key,

@@ -6,6 +6,12 @@ const asyncHandler = require("express-async-handler");
 const { setTokenCookie, requireAuth } = require("../../utils/auth");
 const { User } = require("../../db/models");
 
+const {
+  s3,
+  singlePublicFileUpload,
+  singleMulterUpload,
+} = require("../../utils/awsS3");
+
 const router = express.Router();
 
 //Validation
@@ -30,10 +36,21 @@ const validateSignup = [
 // Sign up
 router.post(
   "",
+  singleMulterUpload("profilePic"),
   validateSignup,
   asyncHandler(async (req, res) => {
     const { email, password, username } = req.body;
-    const user = await User.signup({ email, username, password });
+
+    let profilePicURL = null;
+    if (req.file)
+      profilePicURL = await singlePublicFileUpload(req.file, "prof-pics");
+
+    const user = await User.signup({
+      email,
+      username,
+      password,
+      profilePicURL,
+    });
 
     await setTokenCookie(res, user);
 
