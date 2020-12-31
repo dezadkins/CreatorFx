@@ -1,12 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 
 import fetch from "../../store/csrf";
 import Loader from "../Loader/Loader";
-import SearchBar from "../Navigation/SearchBar";
+// import SearchBar from "../Navigation/SearchBar";
 import { Player } from "../Player/Player";
 // import Search from "../Search/Search";
 import SearchResults from "../Navigation/SearchResults";
@@ -238,7 +238,7 @@ export default function ProfilePage() {
 
   //Authorization
   if (!user) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/" />;
   }
 
   //Event Handlers

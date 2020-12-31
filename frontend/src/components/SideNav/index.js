@@ -43,20 +43,18 @@ export default function SideNav({ userId }) {
         <div className="side-logo-container" onClick={logoClick}>
           <img className="side__nav-logo" src="/CFxLogo.png" alt="logo" />
         </div>
+        <SearchBar />
         <ul className="nav-items">
-          <li>
-            <SearchBar />
-          </li>
           <li>
             <SideNavLink activeStyle={{ color: "red" }} to="/home">
               <HomeIcon />
-              <h3>Home</h3>
+              <h3 className="nav-item-title">Home</h3>
             </SideNavLink>
           </li>
           <li>
             <SideNavLink activeStyle={{ color: "red" }} to="/fxes/new">
               <CloudUploadIcon />
-              <h3>Upload</h3>
+              <h3 className="nav-item-title">Upload</h3>
             </SideNavLink>
           </li>
           <li>
@@ -65,7 +63,7 @@ export default function SideNav({ userId }) {
               to={`/users/${userId}`}
             >
               <CollectionsIcon />
-              <h3>My Collection</h3>
+              <h3 className="nav-item-title">My Collection</h3>
             </SideNavLink>
           </li>
         </ul>

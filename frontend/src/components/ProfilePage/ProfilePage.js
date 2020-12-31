@@ -26,7 +26,7 @@ export default function ProfilePage() {
   const { userId } = useParams();
 
   if (!user) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/" />;
   } else if (user.id === parseInt(userId, 10)) {
     return (
       <PageContainer>

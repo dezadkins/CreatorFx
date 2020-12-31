@@ -1,15 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { useHistory, Redirect, Route, Switch } from "react-router-dom";
+// import { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
-
+import UploadFxPage from "../UploadFxPage";
 import SideNav from "../SideNav";
 import HomePage from "../HomePage";
-
-// import UploadFxPage from "./UploadFxPage/UploadFxPage";
-// import ProfilePage from "./ProfilePage/ProfilePage";
-// import EditFxPage from "./EditFxPage/EditFxPage";
+import ProfilePage from "../HomePage";
 
 const PageContainer = styled.div`
   min-height: 100%;
@@ -75,12 +72,12 @@ export default function GridLayout() {
             <Route path="/home">
               <HomePage></HomePage>
             </Route>
-            {/* <Route path="/fxes/new">
-            <UploadFxPage />
-          </Route> */}
-            {/* <Route path="/users/:userId">
-            <ProfilePage />
-          </Route> */}
+            <Route path="/fxes/new">
+              <UploadFxPage />
+            </Route>
+            <Route path="/users/:userId">
+              <ProfilePage />
+            </Route>
             {/* <Route path="/fxes/:fxId/edit">
             <EditFxPage />
           </Route> */}

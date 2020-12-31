@@ -42,7 +42,7 @@ export default function SignupForm() {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/home" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
