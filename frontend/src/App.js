@@ -5,7 +5,6 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation/";
 // import LoginForm from "./components/LoginFormModal/LoginForm";
-import LoginFormPage from "./components/LoginFormPage";
 import LandingPage from "./components/LandingPage";
 import HomePage from "./components/HomePage";
 import GridLayout from "./components/GridLayout";
