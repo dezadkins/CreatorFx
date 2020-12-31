@@ -35,7 +35,7 @@
   padding: 20px;
 }
 
-.link-style {
+/* .link-style {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -47,7 +47,7 @@
   &:active {
     color: red;
   }
-}
+} */
 
 .nav-item-title {
   margin-left: 20px;

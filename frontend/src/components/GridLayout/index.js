@@ -7,12 +7,13 @@ import UploadFxPage from "../UploadFxPage";
 import SideNav from "../SideNav";
 import HomePage from "../HomePage";
 import ProfilePage from "../HomePage";
+import Footer from "../Footer";
 
 const PageContainer = styled.div`
   min-height: 100%;
   width: 100%;
   height: 100%;
-  position: relative;
+  position: fixed;
   display: grid;
   grid-template-rows: auto 1fr auto;
   overflow-x: hidden;
@@ -22,6 +23,7 @@ const PageContainer = styled.div`
     "side-nav main-view main-view"
     "side-nav now-playing-bar now-playing-bar";
   background-color: #323f4b;
+  z-index: -1;
   align-content: start;
 `;
 
@@ -31,7 +33,19 @@ const RootContainer = styled.div`
     rgba(176, 158, 158, 1) 0%,
     rgba(62, 62, 57, 1) 100%
   );
-  height: 100vh;
+  height: 100%;
+  margin: -8px;
+  z-index: -1;
+`;
+
+const FooterGrid = styled.div`
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  width: 99%;
+  height: 100%;
+  margin-top: 50px;
+  // border: 1px solid black;
 `;
 
 export default function GridLayout() {
@@ -82,6 +96,9 @@ export default function GridLayout() {
             <EditFxPage />
           </Route> */}
           </Switch>
+          <FooterGrid>
+            <Footer />
+          </FooterGrid>
         </PageContainer>
       </RootContainer>
     </>
