@@ -1,40 +1,27 @@
+import { Switch, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import HomePage from "../HomePage";
+
 import SideNav from "../SideNav";
 import "./GridLayout.css";
-import "../SideNav/SideNav.css";
+// import UploadFxPage from "./components/UploadFxPage";
+
 export default function GridLayout() {
+  const user = useSelector((state) => state.session.user);
+
   return (
     <>
-      {/* <div></div> */}
-      <div className="container">
-        <div className="sidebar">
-          <div className="side__nav-container">
-            <SideNav />
-          </div>
-        </div>
-        <div className="main-content">
-          <div className="header ">
-            <p>header</p>
-          </div>
-          <p>main</p>
-          <div class="inner-grid">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-          </div>
-          <div class="inner-grid">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-          </div>
-        </div>
+      <div className="main__page-container">
+        <SideNav userId={user && user.id}> </SideNav>
+        <Switch>
+          <Route path="/home">
+            <HomePage></HomePage>
+          </Route>
+          {/* <Route path="/fxes/new">
+            <UploadFxPage />
+          </Route> */}
+        </Switch>
       </div>
-      {/* <div className="container">
-        <footer class="footer">
-          <p>footer</p>
-        </footer>
-      </div> */}
     </>
   );
 }

@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation/";
 // import LoginForm from "./components/LoginFormModal/LoginForm";
 import LoginFormPage from "./components/LoginFormPage";
 import LandingPage from "./components/LandingPage";
-import FxDisplay from "./components/FxDisplay";
+import HomePage from "./components/HomePage";
 import GridLayout from "./components/GridLayout";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
             <LandingPage />
           </Route>
           <Route path="/home">
-            <FxDisplay />
+            <HomePage />
           </Route>
           <Route path="/uploads">
             <GridLayout />

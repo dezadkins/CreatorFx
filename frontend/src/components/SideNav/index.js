@@ -4,8 +4,11 @@ import { NavLink, useHistory } from "react-router-dom";
 import { logout } from "../../store/session";
 import "./SideNav.css";
 import SearchBar from "../Navigation/SearchBar";
+import HomeIcon from "@material-ui/icons/Home";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import CollectionsIcon from "@material-ui/icons/Collections";
 
-export default function SideNav() {
+export default function SideNav({ userId }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -21,30 +24,45 @@ export default function SideNav() {
 
   return (
     <>
-      <div>
-        <div className="side__nav-item" onClick={logoClick}>
+      <div className="sidebar">
+        <div className="side-logo-container" onClick={logoClick}>
           <img className="side__nav-logo" src="/CFxLogo.png" alt="logo" />
         </div>
-        <div className="side__nav-item">
-          <div className="side__nav-link">
+        <ul className="nav-items">
+          <li>
             <SearchBar />
-          </div>
-        </div>
-        <div className="side__nav-item">
-          <NavLink className="side__nav-link" to={`/home`}>
-            <span className="nav-title">Home</span>
-          </NavLink>
-        </div>
-        <div className="side__nav-item">
-          <NavLink className="side__nav-link" to={`/uploads`}>
-            <span className="nav-title">Upload</span>
-          </NavLink>
-        </div>
-        <div className="side__nav-item">
-          <NavLink className="side__nav-link" to={`/collection`}>
-            <span className="nav-title">My Collection</span>
-          </NavLink>
-        </div>
+          </li>
+          <li>
+            <NavLink
+              className="link-style"
+              activeStyle={{ color: "red" }}
+              to="/home"
+            >
+              <HomeIcon />
+              <h3>Home</h3>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="link-style"
+              activeStyle={{ color: "red" }}
+              to="/fxes/new"
+            >
+              <CloudUploadIcon />
+              <h3>Upload</h3>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="link-style"
+              activeStyle={{ color: "#c054eb" }}
+              to={`/users/${userId}`}
+            >
+              <CollectionsIcon />
+              <h3>My Collection</h3>
+            </NavLink>
+          </li>
+        </ul>
       </div>
     </>
   );
