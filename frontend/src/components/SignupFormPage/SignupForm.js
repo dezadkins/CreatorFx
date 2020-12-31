@@ -29,8 +29,8 @@ export default function SignupForm() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -58,7 +58,7 @@ export default function SignupForm() {
 
     setSending(true);
 
-    const user = { email, username, firstName, lastName, profilePic, password };
+    const user = { email, username, profilePic, password };
 
     return dispatch(sessionActions.signup(user))
       .then((res) => {
@@ -91,7 +91,7 @@ export default function SignupForm() {
       )}
       <div className="signup-form__inputs-container">
         <div className="signup-form__input-fields">
-          <FormInput
+          {/* <FormInput
             name="First Name"
             required={true}
             type="text"
@@ -104,7 +104,7 @@ export default function SignupForm() {
             type="text"
             value={lastName}
             onChange={({ target }) => setLastName(target.value)}
-          />
+          /> */}
           <FormInput
             name="Email"
             required={true}

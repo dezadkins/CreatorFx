@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-
+// import styled from ".styled-components";
 import FormInput from "../FormInput";
 import "./LoginForm.css";
 
@@ -25,6 +25,19 @@ function LoginForm() {
     );
   };
 
+  const loginDemo = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(
+      sessionActions.loginUser({
+        credential: "demo@user.io",
+        password: "password",
+      })
+    ).catch((res) => {
+      if (res.data && res.data.errors) setErrors(res.data.errors);
+    });
+  };
+
   return (
     <form className="login-form">
       <h2>
@@ -41,6 +54,15 @@ function LoginForm() {
         </ul>
       )}
       <div className="login-form__input-fields">
+        <div className="demo-container">
+          <button className="demo-button" onClick={loginDemo}>
+            Log in as Demo User
+          </button>
+        </div>
+        <div className="demo-divider">
+          <strong className="divider-title">OR</strong>
+        </div>
+
         <FormInput
           name="Email or Username"
           required={true}
