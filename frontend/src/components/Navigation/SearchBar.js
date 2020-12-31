@@ -49,19 +49,6 @@ export default function SearchBar() {
     setShowSearchBar(false);
   };
 
-  // useEffect(() => {
-  //   let timeoutId;
-  //   if (searchValue) {
-  //     timeoutId = setTimeout(
-  //       () => dispatch(changeView(`SEARCH:${searchValue}`)),
-  //       100
-  //     );
-  //   } else {
-  //     timeoutId = setTimeout(() => dispatch(changeView(null)), 100);
-  //   }
-  //   return () => clearTimeout(timeoutId);
-  // }, [searchValue]);
-
   useEffect(() => {
     if (!showSearchBar) return;
 

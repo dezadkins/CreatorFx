@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 // Creates a fetch function that is wrapped in the window global object in order
 // to set an XSRF-TOKEN header on the fetch call
 
-export async function fetch(url, options = {}) {
+const fetch = async (url, options = {}) => {
   // set options.headers to an empty object if there is no headers
   options.headers = options.headers || {};
   // set options.method to 'GET' if there is no method
@@ -39,8 +39,10 @@ export async function fetch(url, options = {}) {
   // if the response status code is under 400, then return the response to the
   // next promise chain
   return res;
-}
+};
 
 export function restoreCSRF() {
   return fetch("/api/csrf/restore");
 }
+
+export default fetch;

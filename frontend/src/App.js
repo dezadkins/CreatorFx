@@ -8,6 +8,9 @@ import Navigation from "./components/Navigation/";
 import LandingPage from "./components/LandingPage";
 import HomePage from "./components/HomePage";
 import GridLayout from "./components/GridLayout";
+import styled from "styled-components";
+import UploadFxPage from "./components/UploadFxPage";
+import SideNav from "./components/SideNav";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,26 +21,19 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <Route path="/home">
-            <HomePage />
-          </Route>
-          <Route path="/uploads">
-            <GridLayout />
-          </Route>
-          {/* <Route path="/login">
-            <LoginFormPage />
-          </Route> */}
-          {/* <Route path="/signup">
-            <SignupFormPage />
-          </Route> */}
-        </Switch>
-      )}
+      <Navigation isLoaded={isLoaded}></Navigation>
+      <Route exact path="/">
+        <LandingPage />
+      </Route>
+
+      <Switch>
+        <Route path="/home">
+          <GridLayout />
+        </Route>
+        <Route path="/fxes/new">
+          <SideNav />
+        </Route>
+      </Switch>
     </>
   );
 }

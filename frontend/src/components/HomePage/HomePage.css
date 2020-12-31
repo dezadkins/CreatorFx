@@ -22,11 +22,9 @@
   display: grid;
   border: 1px solid black;
   grid-template-rows: 1fr auto;
-  /* grid-template-columns: 1fr auto; */
   grid-template-areas:
     "now-playing-bar now-playing-bar now-playing-bar"
     "main-view main-view main-view";
-  /* background-color: #323f4b; */
   align-content: start;
 }
 
@@ -63,6 +61,3 @@
   flex-direction: row;
   margin-bottom: 0px;
 }
-/* .home__footer {
-  border: 1px solid black;
-} */

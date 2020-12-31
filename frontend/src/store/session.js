@@ -1,5 +1,5 @@
 import axios from "axios";
-import { fetch } from "./csrf";
+import fetch from "./csrf";
 
 const LOGIN_USER = "LOGIN_USER";
 const SET_USER = "session/setUser";

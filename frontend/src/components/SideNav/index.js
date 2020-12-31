@@ -7,6 +7,21 @@ import SearchBar from "../Navigation/SearchBar";
 import HomeIcon from "@material-ui/icons/Home";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import CollectionsIcon from "@material-ui/icons/Collections";
+import styled from "styled-components";
+
+const SideNavLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f5f7f9;
+  transition: color 0.3s ease-in;
+  &:hover {
+    color: red;
+  }
+  &:active {
+    color: red;
+  }
+`;
 
 export default function SideNav({ userId }) {
   const dispatch = useDispatch();
@@ -33,34 +48,25 @@ export default function SideNav({ userId }) {
             <SearchBar />
           </li>
           <li>
-            <NavLink
-              className="link-style"
-              activeStyle={{ color: "red" }}
-              to="/home"
-            >
+            <SideNavLink activeStyle={{ color: "red" }} to="/home">
               <HomeIcon />
               <h3>Home</h3>
-            </NavLink>
+            </SideNavLink>
           </li>
           <li>
-            <NavLink
-              className="link-style"
-              activeStyle={{ color: "red" }}
-              to="/fxes/new"
-            >
+            <SideNavLink activeStyle={{ color: "red" }} to="/fxes/new">
               <CloudUploadIcon />
               <h3>Upload</h3>
-            </NavLink>
+            </SideNavLink>
           </li>
           <li>
-            <NavLink
-              className="link-style"
+            <SideNavLink
               activeStyle={{ color: "#c054eb" }}
               to={`/users/${userId}`}
             >
               <CollectionsIcon />
               <h3>My Collection</h3>
-            </NavLink>
+            </SideNavLink>
           </li>
         </ul>
       </div>

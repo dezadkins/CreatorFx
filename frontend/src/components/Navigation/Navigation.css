@@ -11,11 +11,11 @@
   border: 1px solid black;
 }
 
-ul {
+/* ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
-}
+} */
 
 /*
  * ─── LOGGED IN USER ─────────────────────────────────────────────────────────────

@@ -13,7 +13,6 @@
   position: fixed;
   width: 99%;
   height: 100%;
-  /* border: 1px solid white; */
 }
 
 .nav__container {
@@ -46,8 +45,6 @@ h1 {
   padding: 15px;
   margin-top: 75px;
 }
-
-/* MediaQueries ********************* */
 
 @media (min-aspec-ration: 16/9) {
   .videoBG {
