@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "sequelize": "sequelize",
@@ -42,5 +41,6 @@
   "devDependencies": {
     "dotenv-cli": "^4.0.0",
     "nodemon": "^2.0.6"
-  }
+  },
+  "description": ""
 }

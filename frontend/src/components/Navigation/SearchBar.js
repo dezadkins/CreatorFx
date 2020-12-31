@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 // import { clearEvents } from "../../store/event";
 
-import { changeView } from "../../store/view";
+// import { changeView } from "../../store/view";
 
 function SearchField({ searchValue, setSearchValue, closeSearch }) {
   const searchRef = useRef(null);
@@ -49,18 +49,18 @@ export default function SearchBar() {
     setShowSearchBar(false);
   };
 
-  useEffect(() => {
-    let timeoutId;
-    if (searchValue) {
-      timeoutId = setTimeout(
-        () => dispatch(changeView(`SEARCH:${searchValue}`)),
-        100
-      );
-    } else {
-      timeoutId = setTimeout(() => dispatch(changeView(null)), 100);
-    }
-    return () => clearTimeout(timeoutId);
-  }, [searchValue]);
+  // useEffect(() => {
+  //   let timeoutId;
+  //   if (searchValue) {
+  //     timeoutId = setTimeout(
+  //       () => dispatch(changeView(`SEARCH:${searchValue}`)),
+  //       100
+  //     );
+  //   } else {
+  //     timeoutId = setTimeout(() => dispatch(changeView(null)), 100);
+  //   }
+  //   return () => clearTimeout(timeoutId);
+  // }, [searchValue]);
 
   useEffect(() => {
     if (!showSearchBar) return;

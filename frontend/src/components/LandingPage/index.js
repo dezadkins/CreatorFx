@@ -5,6 +5,16 @@ import "./LandingPage.css";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormPage from "../SignupFormPage";
 import Footer from "../Footer";
+import styled from "styled-components";
+
+const VidOverlay = styled.div`
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+`;
 
 const LandingPage = () => {
   const history = useHistory();
@@ -31,6 +41,7 @@ const LandingPage = () => {
             type="video/mp4"
           />
         </video>
+        <VidOverlay></VidOverlay>
 
         <div className="footer__box">
           <Footer />
