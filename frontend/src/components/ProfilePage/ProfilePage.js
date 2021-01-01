@@ -11,12 +11,12 @@ const PageContainer = styled.div`
   height: 100%;
   position: relative;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr;
   grid-template-columns: auto;
-  grid-template-areas:
-    "main-view main-view main-view"
-    "now-playing-bar now-playing-bar now-playing-bar";
-  background-color: #323f4b;
+  //   grid-template-areas:
+  //     "now-playing-bar now-playing-bar"
+  //     "main-view main-view main-view";
+  //   background-color: #323f4b;
 `;
 
 export default function ProfilePage() {

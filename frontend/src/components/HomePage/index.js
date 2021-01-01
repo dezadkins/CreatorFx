@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import styled from "styled-components";
 
 import fetch from "../../store/csrf";
@@ -11,45 +11,16 @@ import { Player } from "../Player/Player";
 // import Search from "../Search/Search";
 import SearchResults from "../Navigation/SearchResults";
 
-//Styles
-const PageContainer = styled.div`
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "search search search"
-    "main-view main-view main-view"
-    "now-playing-bar now-playing-bar now-playing-bar";
-  background: rgb(176, 158, 158);
-  background: linear-gradient(
-    0deg,
-    rgba(176, 158, 158, 1) 0%,
-    rgba(62, 62, 57, 1) 100%
-  );
-  align-content: start;
-`;
 const Main = styled.div`
   display: flex;
-  padding: 30px;
   flex-direction: column;
-  background: linear-gradient(
-    0deg,
-    rgba(176, 158, 158, 1) 0%,
-    rgba(62, 62, 57, 1) 100%
-  );
   grid-area: main-view;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   margin-left: 10px;
 `;
 const Section = styled.div`
   display: flex;
   flex-direction: column;
-
-  margin: 0;
 `;
 const SectionTitle = styled.h2`
   display: block;
@@ -58,26 +29,9 @@ const SectionTitle = styled.h2`
 
   color: #f5f7f9;
 `;
-
-const PlayDisplay = styled.div`
-  visibility: hidden;
-  display: none;
-  display: flex;
-  background-color: rgba(31, 41, 51, 0.8);
-  justify-content: center;
-  padding: 0;
-  left: 0;
-  transition: visibility 0.1s ease-in;
-  min-height: 100%;
-  min-width: 100%;
-  align-items: center;
-  position: absolute;
-  margin-right: 20px;
-  color: #f5f7f9;
-`;
-
 const PlayText = styled.span`
-  background-color: #c054eb;
+  z-index: 4;
+  background-color: transparent;
   border: 0px;
   margin-top: -30px;
   height: 33.33px;
@@ -89,12 +43,38 @@ const PlayText = styled.span`
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-size: 0.7rem;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-in-out;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   &:hover {
     cursor: pointer;
+  }
+`;
+const PlayDisplay = styled.div`
+  visibility: hidden;
+  display: none;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  justify-content: center;
+  padding: 0;
+  left: 0;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-in-out;
+  border-radius: 3px;
+  min-height: 100%;
+  min-width: 100%;
+  align-items: center;
+  position: absolute;
+  color: #f5f7f9;
+  &:hover ${PlayText} {
+    background-color: #c054eb;
+  }
+  &:hover {
+    background-color: rgba(61, 81, 102, 0.8);
   }
 `;
 
@@ -119,7 +99,7 @@ const User = styled.div`
   flex-direction: column;
   padding: 10px;
   margin-right: 20px;
-  background-color: rgba(31, 41, 51, 0.57);
+  // background-color: rgba(31, 41, 51, 0.57);
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -146,6 +126,7 @@ const FxTitle = styled.h2`
   margin-bottom: 4px;
   width: 100px;
   color: #f5f7f9;
+  z-index: 4;
 `;
 const FxArtist = styled.h2`
   display: block;
@@ -180,7 +161,7 @@ export default function ProfilePage() {
   //     return state.search.term;
   //   });
 
-  //   const history = useHistory();
+  const history = useHistory();
 
   //   //onRe-render
   //   useEffect(() => {
@@ -249,87 +230,85 @@ export default function ProfilePage() {
 
   return (
     <>
-      <PageContainer>
-        {searching ? (
-          <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />
-        ) : (
-          <Main>
-            <Section>
-              <SectionTitle>Trending </SectionTitle>
-              <SectionContent>
-                {loading ? (
-                  <Loader></Loader>
-                ) : fxes[0] ? (
-                  fxes.map((fx) => (
-                    <Fx
-                      onClick={(e) =>
-                        handleClick(e, {
-                          audio: fx.audio,
-                          title: fx.title,
-                          artwork: fx.artwork,
-                        })
-                      }
-                      key={fx.id}
-                    >
-                      <PlayDisplay>
-                        <PlayText>PLAY</PlayText>
-                      </PlayDisplay>
-                      <Artwork src={fx.artwork} alt="artwork" />
-                      <FxTitle>
-                        {fx.title.length > 10
-                          ? fx.title.slice(0, 10) + "..."
-                          : fx.title}
-                      </FxTitle>
-                      <FxArtist>{fx.User.username}</FxArtist>
-                    </Fx>
-                  ))
-                ) : (
-                  <div>No fx</div>
-                )}
-              </SectionContent>
-            </Section>
-            <Section>
-              <SectionTitle>Newly Added</SectionTitle>
-              <SectionContent>
-                {loading ? (
-                  <Loader></Loader>
-                ) : users[0] ? (
-                  users.map((user) => (
-                    <User
-                      onClick={(e) => {
-                        e.preventDefault();
-                        // history.push(`/users/${user.id}`);
-                      }}
-                      key={user.id}
-                    >
-                      <UserImage
-                        src={window.location.origin + "/imagePlaceholder.jpg"}
-                        alt="avatar"
-                      />
-                      <FxTitle>
-                        {" "}
-                        {user.username.length > 20
-                          ? user.username.slice(0, 20) + "..."
-                          : user.username}
-                      </FxTitle>
-                    </User>
-                  ))
-                ) : (
-                  <div>No users</div>
-                )}
-              </SectionContent>
-            </Section>
-          </Main>
-        )}
+      {searching ? (
+        <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />
+      ) : (
+        <Main>
+          <Section>
+            <SectionTitle>Trending </SectionTitle>
+            <SectionContent>
+              {loading ? (
+                <Loader></Loader>
+              ) : fxes[0] ? (
+                fxes.map((fx) => (
+                  <Fx
+                    onClick={(e) =>
+                      handleClick(e, {
+                        audio: fx.audio,
+                        title: fx.title,
+                        artwork: fx.artwork,
+                      })
+                    }
+                    key={fx.id}
+                  >
+                    <PlayDisplay>
+                      <PlayText>PLAY</PlayText>
+                    </PlayDisplay>
+                    <Artwork src={fx.artwork} alt="artwork" />
+                    <FxTitle>
+                      {fx.title.length > 10
+                        ? fx.title.slice(0, 10) + "..."
+                        : fx.title}
+                    </FxTitle>
+                    <FxArtist>{fx.User.username}</FxArtist>
+                  </Fx>
+                ))
+              ) : (
+                <div>No fx</div>
+              )}
+            </SectionContent>
+          </Section>
+          <Section>
+            <SectionTitle>Newly Added</SectionTitle>
+            <SectionContent>
+              {loading ? (
+                <Loader></Loader>
+              ) : users[0] ? (
+                users.map((user) => (
+                  <User
+                    onClick={(e) => {
+                      e.preventDefault();
+                      history.push(`/users/${user.id}`);
+                    }}
+                    key={user.id}
+                  >
+                    <UserImage
+                      src={window.location.origin + "/imagePlaceholder.jpg"}
+                      alt="avatar"
+                    />
+                    <FxTitle>
+                      {" "}
+                      {user.username.length > 20
+                        ? user.username.slice(0, 20) + "..."
+                        : user.username}
+                    </FxTitle>
+                  </User>
+                ))
+              ) : (
+                <div>No users</div>
+              )}
+            </SectionContent>
+          </Section>
+        </Main>
+      )}
 
-        {currentlyPlaying ? (
-          <Player
-            streamUrl={currentlyPlaying.audio}
-            trackTitle={currentlyPlaying.title}
-            preloadType="auto"
-          />
-        ) : null}
-      </PageContainer>
+      {currentlyPlaying ? (
+        <Player
+          streamUrl={currentlyPlaying.audio}
+          trackTitle={currentlyPlaying.title}
+          preloadType="auto"
+        />
+      ) : null}
     </>
   );
 }

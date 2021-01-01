@@ -3,27 +3,23 @@ import { useSelector } from "react-redux";
 // import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
-import UploadFxPage from "../UploadFxPage";
+
 import SideNav from "../SideNav";
 import HomePage from "../HomePage";
 import ProfilePage from "../HomePage";
 import Footer from "../Footer";
+import UploadFxPage from "../UploadFxPage/UploadFxPage";
 
 const PageContainer = styled.div`
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  position: fixed;
+  position: relative;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  overflow-x: hidden;
-  grid-template-columns: auto 1fr 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  // overflow-x: hidden;
+  grid-template-columns: auto 1fr;
   grid-template-areas:
-    "side-nav search search"
-    "side-nav main-view main-view"
-    "side-nav now-playing-bar now-playing-bar";
-  background-color: #323f4b;
-  z-index: -1;
+    "side-nav  now-playing-bar"
+    "side-nav  main-view"
+    "side-nav  footer";
   align-content: start;
 `;
 
@@ -45,7 +41,9 @@ const FooterGrid = styled.div`
   width: 99%;
   height: 100%;
   margin-top: 50px;
+  background-color: transparent;
   // border: 1px solid black;
+  z-index: 2;
 `;
 
 export default function GridLayout() {
