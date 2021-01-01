@@ -9,8 +9,9 @@ export default function UploadFxPage() {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 50%;
     border: 2px solid blue;
+    z-index: 1;
   `;
 
   const PageTitle = styled.h1`

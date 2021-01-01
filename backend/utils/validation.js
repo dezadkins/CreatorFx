@@ -20,25 +20,3 @@ const handleValidationErrors = (req, _res, next) => {
 module.exports = {
   handleValidationErrors,
 };
-
-// fetch("/api/session", {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//     "XSRF-TOKEN": `N0SYi1dm-ZXvBhN9Os0LhU8i0MrBzSMKxt1g`,
-//   },
-//   body: JSON.stringify({ credential: "", password: "" }),
-// })
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-
-// fetch("/api/session", {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//     "XSRF-TOKEN": `N0SYi1dm-ZXvBhN9Os0LhU8i0MrBzSMKxt1g`,
-//   },
-//   body: JSON.stringify({ credential: "Demo-lition", password: "" }),
-// })
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));

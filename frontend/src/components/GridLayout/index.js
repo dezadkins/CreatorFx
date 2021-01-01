@@ -43,7 +43,7 @@ const FooterGrid = styled.div`
   margin-top: 50px;
   background-color: transparent;
   // border: 1px solid black;
-  z-index: 2;
+  // z-index: 2;
 `;
 
 export default function GridLayout() {

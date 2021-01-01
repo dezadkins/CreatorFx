@@ -16,14 +16,9 @@ const InputContainer = styled.label`
   margin-bottom: 10px;
 `;
 
-const LabelSpan = styled.span`
-  color: #9ea5ad;
-  margin-bottom: 10px;
-  font-size: 0.7rem;
-`;
-
 const Input = styled.input`
   width: 400px;
+  align-content: center;
   background-color: #52606d;
   border: 0.5px solid #616e7c;
   height: 33.33px;
@@ -108,7 +103,7 @@ export default function UploadFxForm(props) {
 
       if (audio) formData.append("audio", audio);
       // console.log(formData.get("audio"));
-      const res = await fetch("/api/fx", {
+      const res = await fetch("/api/fxes", {
         method: "POST",
         body: formData,
       });
@@ -153,8 +148,13 @@ export default function UploadFxForm(props) {
           ))}
         </ul>
         <InputContainer>
-          <LabelSpan>Fx Title</LabelSpan>
-          <Input type="text" value={title} onChange={updateTitleVal} required />
+          <Input
+            type="text"
+            placeholder="Fx Title"
+            value={title}
+            onChange={updateTitleVal}
+            required
+          />
         </InputContainer>
         <UploadButton onClick={handleClick}>
           {audio ? audio.name : "UPLOAD FX"}

@@ -35,7 +35,7 @@ const multiplePublicFileUpload = async (files) => {
   );
 };
 
-// --------------------------- Prviate UPLOAD ------------------------
+// --------------------------- Private UPLOAD ------------------------
 
 const singlePrivateFileUpload = async (file) => {
   const { originalname, mimetype, buffer } = await file;
