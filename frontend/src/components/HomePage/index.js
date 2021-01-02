@@ -9,7 +9,28 @@ import Loader from "../Loader/Loader";
 import { Player } from "../Player/Player";
 // import Search from "../Search/Search";
 import SearchResults from "../Navigation/SearchResults";
-import SearchBar from "../Navigation/SearchBar";
+// import SearchBar from "../Navigation/SearchBar";
+
+// const PageContainer = styled.div`
+//   min-height: 100%;
+//   width: 100%;
+//   height: 100%;
+//   position: relative;
+//   display: grid;
+//   grid-template-rows: auto 1fr auto;
+//   grid-template-columns: auto 1fr;
+//   grid-template-areas:
+//     "side-nav  now-playing-bar"
+//     "side-nav  main-view"
+//     "side-nav  footer";
+//   background: rgb(176, 158, 158);
+//   background: linear-gradient(
+//     0deg,
+//     rgba(176, 158, 158, 1) 0%,
+//     rgba(62, 62, 57, 1) 100%
+//   );
+//   align-content: start;
+// `;
 
 const PageContainer = styled.div`
   min-height: 100%;
@@ -31,17 +52,24 @@ const PageContainer = styled.div`
   );
   align-content: start;
 `;
-
 const Main = styled.div`
   display: flex;
+  padding: 30px;
   flex-direction: column;
+  background: linear-gradient(
+    0deg,
+    rgba(176, 158, 158, 1) 0%,
+    rgba(62, 62, 57, 1) 100%
+  );
   grid-area: main-view;
-  // overflow-y: scroll;
+  overflow-y: scroll;
   margin-left: 10px;
 `;
 const Section = styled.div`
   display: flex;
   flex-direction: column;
+
+  margin: 0;
 `;
 const SectionTitle = styled.h2`
   display: block;
@@ -50,9 +78,26 @@ const SectionTitle = styled.h2`
 
   color: #f5f7f9;
 `;
+
+const PlayDisplay = styled.div`
+  visibility: hidden;
+  display: none;
+  display: flex;
+  background-color: rgba(31, 41, 51, 0.8);
+  justify-content: center;
+  padding: 0;
+  left: 0;
+  transition: visibility 0.1s ease-in;
+  min-height: 100%;
+  min-width: 100%;
+  align-items: center;
+  position: absolute;
+  margin-right: 20px;
+  color: #f5f7f9;
+`;
+
 const PlayText = styled.span`
-  z-index: 4;
-  background-color: transparent;
+  background-color: #c054eb;
   border: 0px;
   margin-top: -30px;
   height: 33.33px;
@@ -64,38 +109,12 @@ const PlayText = styled.span`
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-size: 0.7rem;
-  transition: background-color 0.3s;
-  transition-timing-function: ease-in-out;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   &:hover {
     cursor: pointer;
-  }
-`;
-const PlayDisplay = styled.div`
-  visibility: hidden;
-  display: none;
-  top: 0;
-  right: 0;
-  background-color: transparent;
-  justify-content: center;
-  padding: 0;
-  left: 0;
-  transition: background-color 0.3s;
-  transition-timing-function: ease-in-out;
-  border-radius: 3px;
-  min-height: 100%;
-  min-width: 100%;
-  align-items: center;
-  position: absolute;
-  color: #f5f7f9;
-  &:hover ${PlayText} {
-    background-color: #c054eb;
-  }
-  &:hover {
-    background-color: rgba(61, 81, 102, 0.8);
   }
 `;
 
@@ -120,7 +139,7 @@ const User = styled.div`
   flex-direction: column;
   padding: 10px;
   margin-right: 20px;
-  // background-color: rgba(31, 41, 51, 0.57);
+  background-color: rgba(31, 41, 51, 0.57);
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -147,7 +166,6 @@ const FxTitle = styled.h2`
   margin-bottom: 4px;
   width: 100px;
   color: #f5f7f9;
-  z-index: 4;
 `;
 const FxArtist = styled.h2`
   display: block;
@@ -178,24 +196,24 @@ export default function ProfilePage() {
     return state.session.user;
   });
 
-  // const term = useSelector((state) => {
-  //   return state.search.term;
-  // });
+  //   const term = useSelector((state) => {
+  //     return state.search.term;
+  //   });
 
-  const history = useHistory();
+  //   const history = useHistory();
 
-  //onRe-render
-  // useEffect(() => {
-  //   if (term === "") {
-  //     setSearching(false);
-  //   } else {
-  //     setSearching(true);
-  //   }
+  //   //onRe-render
+  //   useEffect(() => {
+  //     if (term === "") {
+  //       setSearching(false);
+  //     } else {
+  //       setSearching(true);
+  //     }
 
-  //   return function cleanup() {
-  //     setSearching(false);
-  //   };
-  // }, [term]);
+  //     return function cleanup() {
+  //       setSearching(false);
+  //     };
+  //   }, [term]);
 
   useEffect(() => {
     const fetchFxes = async () => {
@@ -239,9 +257,9 @@ export default function ProfilePage() {
   }, []);
 
   //Authorization
-  // if (!user) {
-  //   return <Redirect to="/" />;
-  // }
+  if (!user) {
+    return <Redirect to="/login" />;
+  }
 
   //Event Handlers
   const handleClick = (e, fx) => {
@@ -252,8 +270,8 @@ export default function ProfilePage() {
   return (
     <>
       <PageContainer>
-        {/* <SearchBar></SearchBar> */}
-        {/* term && */}
+        {/* <Search></Search> */}
+
         {searching ? (
           <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />
         ) : (
@@ -302,7 +320,7 @@ export default function ProfilePage() {
                     <User
                       onClick={(e) => {
                         e.preventDefault();
-                        history.push(`/users/${user.id}`);
+                        // history.push(`/users/${user.id}`);
                       }}
                       key={user.id}
                     >
@@ -325,6 +343,7 @@ export default function ProfilePage() {
             </Section>
           </Main>
         )}
+
         {currentlyPlaying ? (
           <Player
             streamUrl={currentlyPlaying.audio}

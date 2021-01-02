@@ -22,10 +22,10 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded}></Navigation>
+
       <Route exact path="/">
         <LandingPage />
       </Route>
-
       <Switch>
         <Route path="/home">
           <GridLayout />

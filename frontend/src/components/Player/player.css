@@ -7,7 +7,7 @@
 }
 
 .sb-soundplayer-progress-inner {
-  background-color: #c054eb;
+  background-color: rgb(248, 67, 50);
   height: 100%;
   -webkit-transition: width 0.2s ease-in;
   transition: width 0.2s ease-in;
@@ -63,7 +63,7 @@
   height: 1em;
   width: 1em;
   border-radius: 1em;
-  background: #c054eb;
+  background: rgb(150, 91, 86);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -0.4em;
@@ -72,7 +72,7 @@
   height: 1em;
   width: 1em;
   border-radius: 1em;
-  background: #c054eb;
+  background: rgb(150, 91, 86);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -0.4em;
@@ -81,20 +81,20 @@
   height: 1em;
   width: 1em;
   border-radius: 1em;
-  background: #c054eb;
+  background: rgb(150, 91, 86);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -0.4em;
 }
 /* progress fill */
 .sb-soundplayer-volume-range::-ms-fill-lower {
-  background: #c054eb;
+  background: rgb(150, 91, 86);
 }
 
 .sb-soundplayer-btn {
   display: inline-block;
   background-color: transparent;
-  color: #c054eb;
+  color: #f5f7f9;
   font-size: 1em;
   padding: 16px;
   padding: 1rem;

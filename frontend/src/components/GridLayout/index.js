@@ -52,17 +52,17 @@ const RootContainer = styled.div`
   margin: -8px;
 `;
 
-// const FooterGrid = styled.div`
-//   display: flex;
-//   align-items: flex-end;
-//   position: fixed;
-//   width: 99%;
-//   height: 100%;
-//   margin-top: 50px;
-//   background-color: transparent;
-//   // border: 1px solid black;
-//   // z-index: 2;
-// `;
+const FooterGrid = styled.div`
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  width: 99%;
+  height: 100%;
+  margin-top: 50px;
+  background-color: transparent;
+  // border: 1px solid black;
+  // z-index: 2;
+`;
 
 export default function GridLayout() {
   // const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
