@@ -6,10 +6,10 @@ import styled from "styled-components";
 
 import fetch from "../../store/csrf";
 import Loader from "../Loader/Loader";
-import SearchBar from "../Navigation/SearchBar";
 import { Player } from "../Player/Player";
 // import Search from "../Search/Search";
 import SearchResults from "../Navigation/SearchResults";
+import SearchBar from "../Navigation/SearchBar";
 
 const Main = styled.div`
   display: flex;
@@ -157,24 +157,24 @@ export default function ProfilePage() {
     return state.session.user;
   });
 
-  const term = useSelector((state) => {
-    return state.search.term;
-  });
+  // const term = useSelector((state) => {
+  //   return state.search.term;
+  // });
 
   const history = useHistory();
 
-  //   //onRe-render
-  useEffect(() => {
-    if (term === "") {
-      setSearching(false);
-    } else {
-      setSearching(true);
-    }
+  //onRe-render
+  // useEffect(() => {
+  //   if (term === "") {
+  //     setSearching(false);
+  //   } else {
+  //     setSearching(true);
+  //   }
 
-    return function cleanup() {
-      setSearching(false);
-    };
-  }, [term]);
+  //   return function cleanup() {
+  //     setSearching(false);
+  //   };
+  // }, [term]);
 
   useEffect(() => {
     const fetchFxes = async () => {
@@ -230,6 +230,8 @@ export default function ProfilePage() {
 
   return (
     <>
+      {/* <SearchBar></SearchBar> */}
+      {/* term && */}
       {searching ? (
         <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />
       ) : (
@@ -301,7 +303,6 @@ export default function ProfilePage() {
           </Section>
         </Main>
       )}
-
       {currentlyPlaying ? (
         <Player
           streamUrl={currentlyPlaying.audio}

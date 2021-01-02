@@ -30,7 +30,7 @@ function SearchField({ searchValue, setSearchValue, closeSearch }) {
 }
 
 export default function SearchBar() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -59,7 +59,7 @@ export default function SearchBar() {
 
   const [term, setTerm] = useState("");
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const setSearchResults = async () => {

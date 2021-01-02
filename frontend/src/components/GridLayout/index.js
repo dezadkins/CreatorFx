@@ -24,6 +24,23 @@ const PageContainer = styled.div`
   align-content: start;
   z-index: 1;
 `;
+// const PageContainer = styled.div`
+//   min-height: 100%;
+//   width: 100%;
+//   height: 100%;
+//   position: relative;
+//   display: grid;
+//   grid-template-rows: auto 1fr auto;
+//   overflow-x: hidden;
+//   grid-template-columns: auto 1fr;
+//   grid-template-areas:
+//     "side-nav  now-playing-bar"
+//     "side-nav  main-view"
+//     "side-nav  footer";
+//   align-content: start;
+//   background-color: #323f4b;
+//   align-content: start;
+// `;
 
 const RootContainer = styled.div`
   background: linear-gradient(
