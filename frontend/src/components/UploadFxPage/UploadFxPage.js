@@ -10,7 +10,7 @@ export default function UploadFxPage() {
     align-items: center;
     justify-content: center;
     width: 50%;
-    border: 2px solid blue;
+    // border: 2px solid blue;
     z-index: 1;
   `;
 
