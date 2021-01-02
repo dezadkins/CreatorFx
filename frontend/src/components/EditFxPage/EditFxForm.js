@@ -167,7 +167,7 @@ export default function EditFxForm() {
           setTitle(fx.title);
           setLoading(false);
         } else {
-          history.push(`/`);
+          history.push(`/home`);
         }
       } catch (err) {
         setLoading(false);

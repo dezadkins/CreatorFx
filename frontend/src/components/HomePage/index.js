@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import fetch from "../../store/csrf";
 import Loader from "../Loader/Loader";
-// import SearchBar from "../Navigation/SearchBar";
+import SearchBar from "../Navigation/SearchBar";
 import { Player } from "../Player/Player";
 // import Search from "../Search/Search";
 import SearchResults from "../Navigation/SearchResults";
@@ -157,24 +157,24 @@ export default function ProfilePage() {
     return state.session.user;
   });
 
-  //   const term = useSelector((state) => {
-  //     return state.search.term;
-  //   });
+  const term = useSelector((state) => {
+    return state.search.term;
+  });
 
   const history = useHistory();
 
   //   //onRe-render
-  //   useEffect(() => {
-  //     if (term === "") {
-  //       setSearching(false);
-  //     } else {
-  //       setSearching(true);
-  //     }
+  useEffect(() => {
+    if (term === "") {
+      setSearching(false);
+    } else {
+      setSearching(true);
+    }
 
-  //     return function cleanup() {
-  //       setSearching(false);
-  //     };
-  //   }, [term]);
+    return function cleanup() {
+      setSearching(false);
+    };
+  }, [term]);
 
   useEffect(() => {
     const fetchFxes = async () => {
@@ -218,9 +218,9 @@ export default function ProfilePage() {
   }, []);
 
   //Authorization
-  if (!user) {
-    return <Redirect to="/" />;
-  }
+  // if (!user) {
+  //   return <Redirect to="/" />;
+  // }
 
   //Event Handlers
   const handleClick = (e, fx) => {

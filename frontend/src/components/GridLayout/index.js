@@ -6,10 +6,10 @@ import styled from "styled-components";
 
 import SideNav from "../SideNav";
 import HomePage from "../HomePage";
-import ProfilePage from "../HomePage";
 import EditFxPage from "../EditFxPage/EditFxPage";
 import Footer from "../Footer";
 import UploadFxPage from "../UploadFxPage/UploadFxPage";
+import ProfilePage from "../ProfilePage/ProfilePage";
 
 const PageContainer = styled.div`
   position: relative;
@@ -92,7 +92,7 @@ export default function GridLayout() {
               <EditFxPage />
             </Route>
             <Route path="/users/:userId">
-              <ProfilePage />
+              <ProfilePage></ProfilePage>
             </Route>
           </Switch>
           <FooterGrid>

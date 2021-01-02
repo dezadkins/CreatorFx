@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import { useDispatch } from "react-redux";
-// import { clearEvents } from "../../store/event";
-
-// import { changeView } from "../../store/view";
+import { getSearchResults, removeSearchResults } from "../../store/search";
 
 function SearchField({ searchValue, setSearchValue, closeSearch }) {
   const searchRef = useRef(null);
@@ -58,6 +56,22 @@ export default function SearchBar() {
       document.removeEventListener("click", closeSearch);
     };
   }, [showSearchBar]);
+
+  const [term, setTerm] = useState("");
+
+  // const dispatch = useDispatch();
+
+  useEffect(() => {
+    const setSearchResults = async () => {
+      if (term !== "") {
+        await dispatch(getSearchResults(term));
+      } else {
+        dispatch(removeSearchResults());
+      }
+    };
+
+    setSearchResults();
+  }, [term]);
 
   return (
     <div
