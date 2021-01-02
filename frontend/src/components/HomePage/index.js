@@ -55,7 +55,7 @@ const Main = styled.div`
     rgba(62, 62, 57, 1) 100%
   );
   grid-area: main-view;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   margin-left: 10px;
 `;
 const Section = styled.div`
@@ -178,7 +178,6 @@ const SectionContent = styled.div`
 
 export default function ProfilePage() {
   //State
-  // const [term, setTerm] = useState("");
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
   const [loading, setLoading] = useState(false);
   const [fxes, setFxes] = useState([]);
@@ -196,7 +195,6 @@ export default function ProfilePage() {
 
   const history = useHistory();
 
-  //   //onRe-render
   useEffect(() => {
     if (term === "") {
       setSearching(false);
@@ -264,7 +262,6 @@ export default function ProfilePage() {
   return (
     <>
       {/* <PageContainer> */}
-      {/* <SearchBar></SearchBar> */}
 
       {searching ? (
         <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />

@@ -6,7 +6,12 @@ const Main = styled.div`
   display: flex;
   padding: 30px;
   flex-direction: column;
-  background-color: #323f4b;
+  background: rgb(176, 158, 158);
+  background: linear-gradient(
+    0deg,
+    rgba(176, 158, 158, 1) 0%,
+    rgba(62, 62, 57, 1) 100%
+  );
   grid-area: main-view;
   overflow-y: scroll;
   margin-left: 10px;
