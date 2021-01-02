@@ -13,7 +13,7 @@ const Main = styled.div`
     rgba(62, 62, 57, 1) 100%
   );
   grid-area: main-view;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   margin-left: 10px;
 `;
 const Section = styled.div`
@@ -109,7 +109,7 @@ const Artwork = styled.img`
 const UserImage = styled.img`
   width: 150px;
   height: 150px;
-  border-radius: 75px;
+  border-radius: 5px;
 `;
 
 const FxTitle = styled.h2`

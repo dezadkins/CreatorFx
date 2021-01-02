@@ -61,6 +61,7 @@ const Main = styled.div`
 const Section = styled.div`
   display: flex;
   flex-direction: column;
+  // align-items: flex-start;
 
   margin: 0;
 `;
@@ -149,11 +150,11 @@ const Artwork = styled.img`
 const UserImage = styled.img`
   width: 150px;
   height: 150px;
-  border-radius: 75px;
+  border-radius: 5px;
 `;
 const FxTitle = styled.h2`
   display: flex;
-  align-items: center;
+  // align-items: center;
   font-size: 14px;
   margin-top: 14px;
   margin-bottom: 4px;
@@ -173,6 +174,7 @@ const SectionContent = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
+  min-height: 233px;
   // z-index: 1;
 `;
 
