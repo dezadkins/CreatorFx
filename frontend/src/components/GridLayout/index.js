@@ -22,6 +22,7 @@ const PageContainer = styled.div`
     "side-nav  main-view"
     "side-nav  footer";
   align-content: start;
+  z-index: 1;
 `;
 
 const RootContainer = styled.div`
@@ -32,7 +33,6 @@ const RootContainer = styled.div`
   );
   height: 100%;
   margin: -8px;
-  z-index: -1;
 `;
 
 const FooterGrid = styled.div`
@@ -88,11 +88,11 @@ export default function GridLayout() {
             <Route path="/fxes/new">
               <UploadFxPage />
             </Route>
-            <Route path="/users/:userId">
-              <ProfilePage />
-            </Route>
             <Route path="/fxes/:fxId/edit">
               <EditFxPage />
+            </Route>
+            <Route path="/users/:userId">
+              <ProfilePage />
             </Route>
           </Switch>
           <FooterGrid>

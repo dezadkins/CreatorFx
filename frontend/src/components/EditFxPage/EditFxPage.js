@@ -10,6 +10,7 @@ export default function EditFxPage({ fx }) {
     align-items: center;
     justify-content: center;
     width: 400px;
+    z-index: 1;
   `;
 
   const PageTitle = styled.h1`
