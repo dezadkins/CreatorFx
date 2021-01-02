@@ -7,40 +7,40 @@ import styled from "styled-components";
 import SideNav from "../SideNav";
 import HomePage from "../HomePage";
 import EditFxPage from "../EditFxPage/EditFxPage";
-import Footer from "../Footer";
+// import Footer from "../Footer";
 import UploadFxPage from "../UploadFxPage/UploadFxPage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 
-const PageContainer = styled.div`
-  position: relative;
-  display: grid;
-  grid-template-rows: 1fr auto 1fr;
-  // overflow-x: hidden;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "side-nav  now-playing-bar"
-    "side-nav  main-view"
-    "side-nav  footer";
-  align-content: start;
-  z-index: 1;
-`;
 // const PageContainer = styled.div`
-//   min-height: 100%;
-//   width: 100%;
-//   height: 100%;
 //   position: relative;
 //   display: grid;
-//   grid-template-rows: auto 1fr auto;
-//   overflow-x: hidden;
+//   grid-template-rows: 1fr auto 1fr;
+//   // overflow-x: hidden;
 //   grid-template-columns: auto 1fr;
 //   grid-template-areas:
 //     "side-nav  now-playing-bar"
 //     "side-nav  main-view"
 //     "side-nav  footer";
 //   align-content: start;
-//   background-color: #323f4b;
-//   align-content: start;
+//   z-index: 1;
 // `;
+const PageContainer = styled.div`
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow-x: hidden;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "side-nav  now-playing-bar"
+    "side-nav  main-view"
+    "side-nav  footer";
+  align-content: start;
+  // background-color: #323f4b;
+  align-content: start;
+`;
 
 const RootContainer = styled.div`
   background: linear-gradient(
@@ -52,17 +52,17 @@ const RootContainer = styled.div`
   margin: -8px;
 `;
 
-const FooterGrid = styled.div`
-  display: flex;
-  align-items: flex-end;
-  position: fixed;
-  width: 99%;
-  height: 100%;
-  margin-top: 50px;
-  background-color: transparent;
-  // border: 1px solid black;
-  // z-index: 2;
-`;
+// const FooterGrid = styled.div`
+//   display: flex;
+//   align-items: flex-end;
+//   position: fixed;
+//   width: 99%;
+//   height: 100%;
+//   margin-top: 50px;
+//   background-color: transparent;
+//   // border: 1px solid black;
+//   // z-index: 2;
+// `;
 
 export default function GridLayout() {
   // const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
@@ -105,16 +105,16 @@ export default function GridLayout() {
             <Route path="/fxes/new">
               <UploadFxPage />
             </Route>
-            <Route path="/fxes/:fxId/edit">
-              <EditFxPage />
-            </Route>
             <Route path="/users/:userId">
               <ProfilePage></ProfilePage>
             </Route>
+            <Route path="/fxes/:fxId/edit">
+              <EditFxPage />
+            </Route>
           </Switch>
-          <FooterGrid>
+          {/* <FooterGrid>
             <Footer />
-          </FooterGrid>
+          </FooterGrid> */}
         </PageContainer>
       </RootContainer>
     </>
