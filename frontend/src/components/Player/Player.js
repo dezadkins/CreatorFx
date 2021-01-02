@@ -9,7 +9,11 @@ import styled from "styled-components";
 import "./player.css";
 const PlayerContainer = styled.div`
   grid-area: now-playing-bar;
-  background-color: #3e4c59;
+  background: linear-gradient(
+    0deg,
+    rgba(176, 158, 158, 1) 0%,
+    rgba(62, 62, 57, 1) 100%
+  );
   padding: 1rem;
   display: flex;
   align-items: center;
