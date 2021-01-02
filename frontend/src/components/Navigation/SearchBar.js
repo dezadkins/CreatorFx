@@ -1,37 +1,52 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getSearchResults, removeSearchResults } from "../../store/search";
 
 function SearchField({ searchValue, setSearchValue, closeSearch }) {
   const searchRef = useRef(null);
 
+  // const checkEnter = (e) => {
+  //   e.stopPropagation();
+
+  //   if (e.key !== "Enter") return;
+  //   closeSearch();
+  // };
+
+  // export default function Search() {
+  const [term, setTerm] = useState("");
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    searchRef.current.focus();
-  }, []);
+    const setSearchResults = async () => {
+      if (term !== "") {
+        await dispatch(getSearchResults(term));
+      } else {
+        dispatch(removeSearchResults());
+      }
+    };
 
-  const checkEnter = (e) => {
-    e.stopPropagation();
+    setSearchResults();
+  }, [term]);
 
-    if (e.key !== "Enter") return;
-    closeSearch();
+  const handleChange = (e) => {
+    setTerm(e.target.value);
   };
 
   return (
     <input
-      ref={searchRef}
+      // ref={searchRef}
       type="text"
       placeholder="Search"
-      value={searchValue}
-      onChange={(e) => setSearchValue(e.target.value)}
-      onKeyUp={checkEnter}
+      value={term}
+      onChange={handleChange}
+      required
     />
   );
 }
 
 export default function SearchBar() {
-  // const dispatch = useDispatch();
-
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [searchValue, setSearchValue] = useState("");
 

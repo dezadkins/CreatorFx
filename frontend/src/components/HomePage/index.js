@@ -178,7 +178,7 @@ const SectionContent = styled.div`
 
 export default function ProfilePage() {
   //State
-  const [term, setTerm] = useState("");
+  // const [term, setTerm] = useState("");
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
   const [loading, setLoading] = useState(false);
   const [fxes, setFxes] = useState([]);
@@ -190,9 +190,9 @@ export default function ProfilePage() {
     return state.session.user;
   });
 
-  // const term = useSelector((state) => {
-  //   return state.search.term;
-  // });
+  const term = useSelector((state) => {
+    return state.search.term;
+  });
 
   const history = useHistory();
 
@@ -264,7 +264,7 @@ export default function ProfilePage() {
   return (
     <>
       {/* <PageContainer> */}
-      {/* <Search></Search> */}
+      {/* <SearchBar></SearchBar> */}
 
       {searching ? (
         <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />
