@@ -80,7 +80,7 @@ const UploadDisplay = styled.div`
 `;
 
 const UploadText = styled.span`
-  background-color: #c054eb;
+  background-color: #ff0031;
   border: 0px;
   margin-top: -30px;
   height: 33.33px;

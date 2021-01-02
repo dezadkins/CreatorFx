@@ -89,14 +89,14 @@ const PlayDisplay = styled.div`
   color: #f5f7f9;
 `;
 const PlayText = styled.span`
-  background-color: #c054eb;
+  background-color: #ff0031;
   border: 0px;
   margin-top: -30px;
   height: 33.33px;
   width: 60%;
   letter-spacing: 0.1rem;
   color: #f5f7f9;
-  border-radius: 50px;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -187,12 +187,12 @@ const EditFxButton = styled(NavLink)`
 `;
 
 const DeleteFxButton = styled.button`
-  background-color: #c054eb;
+  background-color: #ff0031;
   border: 0px;
   height: 33.33px;
   letter-spacing: 0.1rem;
   color: #f5f7f9;
-  border-radius: 50px;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;

@@ -59,7 +59,7 @@ export default function SideNav({ userId }) {
           </li>
           <li>
             <SideNavLink
-              activeStyle={{ color: "#c054eb" }}
+              activeStyle={{ color: "#ff0031" }}
               to={`/users/${userId}`}
             >
               <CollectionsIcon />

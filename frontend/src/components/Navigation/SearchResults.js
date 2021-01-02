@@ -42,7 +42,7 @@ const PlayDisplay = styled.div`
   color: #f5f7f9;
 `;
 const PlayText = styled.span`
-  background-color: #c054eb;
+  // background-color: #c054eb;
   border: 0px;
   margin-top: -30px;
   height: 33.33px;
