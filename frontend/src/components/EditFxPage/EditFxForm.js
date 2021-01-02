@@ -21,7 +21,7 @@ const InputContainer = styled.label`
 const LabelSpan = styled.span`
   color: #9ea5ad;
   margin-bottom: 10px;
-  font-size: 0.7rem;
+  font-size: 1rem;
 `;
 
 const Input = styled.input`
@@ -38,12 +38,12 @@ const Input = styled.input`
 
 const SubmitButton = styled.button`
   margin-top: 20px;
-  background-color: #a239a0;
+  background-color: #ff0031;
   border: 0px;
   height: 33.33px;
   letter-spacing: 0.1rem;
   color: #f5f7f9;
-  border-radius: 50px;
+  border-radius: 5px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,

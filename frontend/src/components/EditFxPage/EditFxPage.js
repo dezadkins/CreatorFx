@@ -15,7 +15,7 @@ export default function EditFxPage({ fx }) {
 
   const PageTitle = styled.h1`
     display: inline;
-    font-size: 0.7rem;
+    font-size: 1.5rem;
     margin-top: 40px;
     margin-bottom: 15px;
     color: #f5f7f9;

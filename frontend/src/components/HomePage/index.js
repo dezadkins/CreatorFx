@@ -12,6 +12,20 @@ import SearchResults from "../Navigation/SearchResults";
 // import SearchBar from "../Navigation/SearchBar";
 
 // const PageContainer = styled.div`
+//   position: relative;
+//   display: grid;
+//   grid-template-rows: 1fr auto 1fr;
+//   // overflow-x: hidden;
+//   grid-template-columns: auto 1fr;
+//   grid-template-areas:
+//     "side-nav  now-playing-bar"
+//     "side-nav  main-view"
+//     "side-nav  footer";
+//   align-content: start;
+//   z-index: 1;
+// `;
+
+// const PageContainer = styled.div`
 //   min-height: 100%;
 //   width: 100%;
 //   height: 100%;
@@ -31,27 +45,6 @@ import SearchResults from "../Navigation/SearchResults";
 //   );
 //   align-content: start;
 // `;
-
-const PageContainer = styled.div`
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "side-nav  now-playing-bar"
-    "side-nav  main-view"
-    "side-nav  footer";
-  background: rgb(176, 158, 158);
-  background: linear-gradient(
-    0deg,
-    rgba(176, 158, 158, 1) 0%,
-    rgba(62, 62, 57, 1) 100%
-  );
-  align-content: start;
-`;
 const Main = styled.div`
   display: flex;
   padding: 30px;
@@ -180,11 +173,12 @@ const SectionContent = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
+  // z-index: 1;
 `;
 
 export default function ProfilePage() {
   //State
-  // const [term, setTerm] = useState("");
+  const [term, setTerm] = useState("");
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
   const [loading, setLoading] = useState(false);
   const [fxes, setFxes] = useState([]);
@@ -196,24 +190,24 @@ export default function ProfilePage() {
     return state.session.user;
   });
 
-  //   const term = useSelector((state) => {
-  //     return state.search.term;
-  //   });
+  // const term = useSelector((state) => {
+  //   return state.search.term;
+  // });
 
-  //   const history = useHistory();
+  const history = useHistory();
 
   //   //onRe-render
-  //   useEffect(() => {
-  //     if (term === "") {
-  //       setSearching(false);
-  //     } else {
-  //       setSearching(true);
-  //     }
+  useEffect(() => {
+    if (term === "") {
+      setSearching(false);
+    } else {
+      setSearching(true);
+    }
 
-  //     return function cleanup() {
-  //       setSearching(false);
-  //     };
-  //   }, [term]);
+    return function cleanup() {
+      setSearching(false);
+    };
+  }, [term]);
 
   useEffect(() => {
     const fetchFxes = async () => {
@@ -258,7 +252,7 @@ export default function ProfilePage() {
 
   //Authorization
   if (!user) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/home" />;
   }
 
   //Event Handlers
@@ -269,89 +263,89 @@ export default function ProfilePage() {
 
   return (
     <>
-      <PageContainer>
-        {/* <Search></Search> */}
+      {/* <PageContainer> */}
+      {/* <Search></Search> */}
 
-        {searching ? (
-          <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />
-        ) : (
-          <Main>
-            <Section>
-              <SectionTitle>Trending </SectionTitle>
-              <SectionContent>
-                {loading ? (
-                  <Loader></Loader>
-                ) : fxes[0] ? (
-                  fxes.map((fx) => (
-                    <Fx
-                      onClick={(e) =>
-                        handleClick(e, {
-                          audio: fx.audio,
-                          title: fx.title,
-                          artwork: fx.artwork,
-                        })
-                      }
-                      key={fx.id}
-                    >
-                      <PlayDisplay>
-                        <PlayText>PLAY</PlayText>
-                      </PlayDisplay>
-                      <Artwork src={fx.artwork} alt="artwork" />
-                      <FxTitle>
-                        {fx.title.length > 10
-                          ? fx.title.slice(0, 10) + "..."
-                          : fx.title}
-                      </FxTitle>
-                      <FxArtist>{fx.User.username}</FxArtist>
-                    </Fx>
-                  ))
-                ) : (
-                  <div>No fx</div>
-                )}
-              </SectionContent>
-            </Section>
-            <Section>
-              <SectionTitle>Newly Added</SectionTitle>
-              <SectionContent>
-                {loading ? (
-                  <Loader></Loader>
-                ) : users[0] ? (
-                  users.map((user) => (
-                    <User
-                      onClick={(e) => {
-                        e.preventDefault();
-                        // history.push(`/users/${user.id}`);
-                      }}
-                      key={user.id}
-                    >
-                      <UserImage
-                        src={window.location.origin + "/imagePlaceholder.jpg"}
-                        alt="avatar"
-                      />
-                      <FxTitle>
-                        {" "}
-                        {user.username.length > 20
-                          ? user.username.slice(0, 20) + "..."
-                          : user.username}
-                      </FxTitle>
-                    </User>
-                  ))
-                ) : (
-                  <div>No users</div>
-                )}
-              </SectionContent>
-            </Section>
-          </Main>
-        )}
+      {searching ? (
+        <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />
+      ) : (
+        <Main>
+          <Section>
+            <SectionTitle>Trending </SectionTitle>
+            <SectionContent>
+              {loading ? (
+                <Loader></Loader>
+              ) : fxes[0] ? (
+                fxes.map((fx) => (
+                  <Fx
+                    onClick={(e) =>
+                      handleClick(e, {
+                        audio: fx.audio,
+                        title: fx.title,
+                        artwork: fx.artwork,
+                      })
+                    }
+                    key={fx.id}
+                  >
+                    <PlayDisplay>
+                      <PlayText>PLAY</PlayText>
+                    </PlayDisplay>
+                    <Artwork src={fx.artwork} alt="artwork" />
+                    <FxTitle>
+                      {fx.title.length > 10
+                        ? fx.title.slice(0, 10) + "..."
+                        : fx.title}
+                    </FxTitle>
+                    <FxArtist>{fx.User.username}</FxArtist>
+                  </Fx>
+                ))
+              ) : (
+                <div>No Fx Here</div>
+              )}
+            </SectionContent>
+          </Section>
+          <Section>
+            <SectionTitle>Creators</SectionTitle>
+            <SectionContent>
+              {loading ? (
+                <Loader></Loader>
+              ) : users[0] ? (
+                users.map((user) => (
+                  <User
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // history.push(`/users/${user.id}`);
+                    }}
+                    key={user.id}
+                  >
+                    <UserImage
+                      src={window.location.origin + "/imagePlaceholder.jpg"}
+                      alt="avatar"
+                    />
+                    <FxTitle>
+                      {" "}
+                      {user.username.length > 20
+                        ? user.username.slice(0, 20) + "..."
+                        : user.username}
+                    </FxTitle>
+                  </User>
+                ))
+              ) : (
+                <div>No Users</div>
+              )}
+            </SectionContent>
+          </Section>
+        </Main>
+      )}
 
-        {currentlyPlaying ? (
-          <Player
-            streamUrl={currentlyPlaying.audio}
-            trackTitle={currentlyPlaying.title}
-            preloadType="auto"
-          />
-        ) : null}
-      </PageContainer>
+      {currentlyPlaying ? (
+        <Player
+          streamUrl={currentlyPlaying.audio}
+          trackTitle={currentlyPlaying.title}
+          preloadType="auto"
+        />
+      ) : null}
+      {/* </PageContainer> */}
     </>
   );
 }

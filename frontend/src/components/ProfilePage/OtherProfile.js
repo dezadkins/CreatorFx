@@ -9,11 +9,21 @@ import "./Profile.css";
 const ProfileContainer = styled.div`
   grid-area: main-view;
   overflow-y: scroll;
+  padding: 30px;
+  height: 100%;
 `;
 const Header = styled.div`
   display: flex;
-  background: #3e4c59;
+  background: rgb(176, 158, 158);
+  background: linear-gradient(
+    0deg,
+    rgba(176, 158, 158, 1) 0%,
+    rgba(62, 62, 57, 1) 100%
+  );
   padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 `;
 
 const ProfileDetail = styled.div`
@@ -53,7 +63,7 @@ const Main = styled.div`
   display: flex;
   padding: 30px;
   margin-bottom: 0px;
-  background-color: #323f4b;
+  background: rgb(176, 158, 158);
   flex-direction: column;
 `;
 

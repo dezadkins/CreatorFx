@@ -13,8 +13,12 @@ const ProfileContainer = styled.div`
 `;
 const Header = styled.div`
   display: flex;
-
-  background: #3e4c59;
+  background: rgb(176, 158, 158);
+  background: linear-gradient(
+    0deg,
+    rgba(176, 158, 158, 1) 0%,
+    rgba(62, 62, 57, 1) 100%
+  );
   padding: 30px;
 `;
 
@@ -55,7 +59,7 @@ const Main = styled.div`
   display: flex;
   padding: 30px;
   flex-direction: column;
-  background-color: #323f4b;
+  background: rgb(176, 158, 158);
 `;
 
 const Section = styled.div`

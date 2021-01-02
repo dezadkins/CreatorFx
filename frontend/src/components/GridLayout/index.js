@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-// import { useEffect, useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Route, Switch, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import SideNav from "../SideNav";
@@ -52,46 +52,46 @@ const RootContainer = styled.div`
   margin: -8px;
 `;
 
-const FooterGrid = styled.div`
-  display: flex;
-  align-items: flex-end;
-  position: fixed;
-  width: 99%;
-  height: 100%;
-  margin-top: 50px;
-  background-color: transparent;
-  // border: 1px solid black;
-  // z-index: 2;
-`;
+// const FooterGrid = styled.div`
+//   display: flex;
+//   align-items: flex-end;
+//   position: fixed;
+//   width: 99%;
+//   height: 100%;
+//   margin-top: 50px;
+//   background-color: transparent;
+//   // border: 1px solid black;
+//   // z-index: 2;
+// `;
 
 export default function GridLayout() {
-  // const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
-  // const [searching, setSearching] = useState(false);
-  // const [loading, setLoading] = useState(false);
+  const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
+  const [searching, setSearching] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const user = useSelector((state) => state.session.user);
   // const term = useSelector((state) => {
-  //     return state.search.term;
+  //   return state.search.term;
   // });
 
-  // const history = useHistory();
+  const history = useHistory();
 
   // useEffect(() => {
-  //     if (term === "") {
-  //         setSearching(false);
-  //     } else {
-  //         setSearching(true);
-  //     }
+  //   if (term === "") {
+  //     setSearching(false);
+  //   } else {
+  //     setSearching(true);
+  //   }
 
-  //     return function cleanup() {
-  //         setSearching(false);
-  //     };
+  //   return function cleanup() {
+  //     setSearching(false);
+  //   };
   // }, [term]);
 
-  // const handleClick = (e, fx) => {
-  //     e.preventDefault();
-  //     setCurrentlyPlaying(fx);
-  // };
+  const handleClick = (e, fx) => {
+    e.preventDefault();
+    setCurrentlyPlaying(fx);
+  };
 
   return (
     <>
@@ -105,11 +105,11 @@ export default function GridLayout() {
             <Route path="/fxes/new">
               <UploadFxPage />
             </Route>
-            <Route path="/users/:userId">
-              <ProfilePage></ProfilePage>
-            </Route>
             <Route path="/fxes/:fxId/edit">
               <EditFxPage />
+            </Route>
+            <Route path="/users/:userId">
+              <ProfilePage></ProfilePage>
             </Route>
           </Switch>
           {/* <FooterGrid>

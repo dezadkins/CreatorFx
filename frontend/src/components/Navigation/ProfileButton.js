@@ -81,7 +81,7 @@ function ProfileButton({ user }) {
             <div className="navbar__dropdown-text">{sessionUser.email}</div>
           </div>
           <div className="navbar__dropdown-links">
-            <Link className="navbar__dropdown-link" to="/profile">
+            <Link className="navbar__dropdown-link" to="/users/:userId">
               My Profile
             </Link>
             <Link className="navbar__dropdown-link" to="/newcollection">
