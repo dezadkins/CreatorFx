@@ -10,7 +10,7 @@ const {
   s3,
   singlePublicFileUpload,
   singleMulterUpload,
-} = require("../../utils/awsS3");
+} = require("../../awsS3");
 
 const router = express.Router();
 
@@ -35,7 +35,7 @@ const validateSignup = [
 
 // Sign up
 router.post(
-  "",
+  "/",
   singleMulterUpload("profilePic"),
   validateSignup,
   asyncHandler(async (req, res) => {
