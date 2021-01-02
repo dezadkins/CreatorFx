@@ -22,28 +22,28 @@ import SearchResults from "../Navigation/SearchResults";
 //     "side-nav  main-view"
 //     "side-nav  footer";
 //   align-content: start;
-//   z-index: 1;
+//   // z-index: 1;
 // `;
 
 // const PageContainer = styled.div`
-//   min-height: 100%;
-//   width: 100%;
-//   height: 100%;
-//   position: relative;
-//   display: grid;
-//   grid-template-rows: auto 1fr auto;
-//   grid-template-columns: auto 1fr;
-//   grid-template-areas:
-//     "side-nav  now-playing-bar"
-//     "side-nav  main-view"
-//     "side-nav  footer";
-//   background: rgb(176, 158, 158);
-//   background: linear-gradient(
-//     0deg,
-//     rgba(176, 158, 158, 1) 0%,
-//     rgba(62, 62, 57, 1) 100%
-//   );
-//   align-content: start;
+//   // min-height: 100%;
+//   // width: 100%;
+//   // height: 100%;
+//   // position: relative;
+//   // display: grid;
+//   // grid-template-rows: auto 1fr auto;
+//   // grid-template-columns: auto 1fr;
+//   // grid-template-areas:
+//   //   "side-nav  now-playing-bar"
+//   //   "side-nav  main-view";
+//   // "side-nav  footer";
+//   // background: rgb(176, 158, 158);
+//   // background: linear-gradient(
+//   //   0deg,
+//   //   rgba(176, 158, 158, 1) 0%,
+//   //   rgba(62, 62, 57, 1) 100%
+//   // );
+//   // align-content: start;
 // `;
 const Main = styled.div`
   display: flex;

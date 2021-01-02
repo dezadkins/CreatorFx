@@ -1,5 +1,6 @@
 .profile-dropdown {
   position: absolute;
+  padding-top: 15px;
 }
 
 .box-test {
@@ -10,12 +11,6 @@
   background-color: rgb(32, 183, 233);
   border: 1px solid black;
 }
-
-/* ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-} */
 
 /*
  * ─── LOGGED IN USER ─────────────────────────────────────────────────────────────
@@ -28,6 +23,7 @@
   width: 98%;
   height: 40px;
   cursor: pointer;
+  padding-top: 15px;
 }
 
 .navbar__user-container-dropdown {
@@ -102,7 +98,7 @@
   font-size: 40px !important;
   border: 2px solid white;
   background-color: white;
-  color: rgb(248, 50, 50);
+  color: #ff0031;
   z-index: 21;
   position: absolute;
   border-radius: 50%;
@@ -174,7 +170,7 @@
 
 .navbar__dropdown-link:hover {
   color: white;
-  background-color: rgb(150, 91, 86);
+  background-color: rgb(248, 67, 50);
 }
 
 /*
@@ -207,7 +203,7 @@
 
 .navbar__search i {
   margin: 10px;
-  color: rgb(248, 50, 50);
+  color: #ff0031;
 }
 
 .navbar__search--closed:hover {
