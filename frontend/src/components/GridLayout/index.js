@@ -7,6 +7,7 @@ import styled from "styled-components";
 import SideNav from "../SideNav";
 import HomePage from "../HomePage";
 import ProfilePage from "../HomePage";
+import EditFxPage from "../EditFxPage/EditFxPage";
 import Footer from "../Footer";
 import UploadFxPage from "../UploadFxPage/UploadFxPage";
 
@@ -90,9 +91,9 @@ export default function GridLayout() {
             <Route path="/users/:userId">
               <ProfilePage />
             </Route>
-            {/* <Route path="/fxes/:fxId/edit">
-            <EditFxPage />
-          </Route> */}
+            <Route path="/fxes/:fxId/edit">
+              <EditFxPage />
+            </Route>
           </Switch>
           <FooterGrid>
             <Footer />

@@ -33,6 +33,9 @@ function App() {
         <Route path="/fxes/new">
           <GridLayout />
         </Route>
+        <Route path="/fxes/:fxId/edit">
+          <GridLayout />
+        </Route>
         <Route path="/users/:userId">
           <GridLayout />
         </Route>
