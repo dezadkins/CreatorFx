@@ -20,7 +20,7 @@ export default function Footer() {
           <a target="_blank" rel="noreferrer" href="https://soundcloud.com/">
             SoundCloud
           </a> */}
-          <h4 style={{ color: "white" }}>&copy; Copyright 2020</h4>
+          <h4 style={{ color: "white" }}>&copy; Copyright 2021</h4>
         </div>
         <div className="footer__links-right">
           <a

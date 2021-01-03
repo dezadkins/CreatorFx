@@ -16,7 +16,9 @@ const PageContainer = styled.div`
 const HeaderDiv = styled.div`
   display: flex;
   justify-content: center;
+  height: 200px;
   color: rgb(3, 3, 152);
+
   font-family: "Cuprum", sans-serif;
 `;
 
@@ -25,8 +27,8 @@ const SectionDiv = styled.div`
   justify-content: center;
   font-family: "Cuprum", sans-serif;
   font-size: 20px;
+  color: white;
   width: 100%;
-  border: 1px solid white;
 `;
 
 const FooterDiv = styled.div`
@@ -43,15 +45,15 @@ export default function AboutPage() {
         </HeaderDiv>
         <SectionDiv>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            aspernatur eaque doloribus? Tempora ratione facilis eum accusamus
-            magnam deleniti, illum, quas voluptate dolore aliquid inventore
-            sapiente? Facere, voluptatem maiores totam corporis ut cum est optio
-            modi eaque, fuga a nihil autem. Veniam placeat mollitia quae libero
-            tempore? Harum quaerat quidem itaque labore perferendis voluptate
-            ipsam vero ducimus, quibusdam atque, nisi necessitatibus, eligendi
-            voluptatibus. Maxime sed unde quae officiis aut nemo eum natus
-            consequuntur pariatur a. Hic accusamus doloremque aliquam sed.
+            An exclusively effects platform, CreatorFx lets people discover and
+            enjoy a large selection of sound fx from a diverse creative
+            community. Launched in 2020, the platform hopes to become renowned
+            for its unique content and features, including the ability to share
+            sound effects and connect directly with creators, and users alike.
+            This is made possible by an open platform that directly connects
+            creators and users across the globe. Film makers and audio creators
+            can use CreatorFx to both share and monetise their content with a
+            global audience. CreatorFx will continue to update the site.
           </p>
         </SectionDiv>
         <FooterDiv>

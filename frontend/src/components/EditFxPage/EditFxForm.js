@@ -271,7 +271,7 @@ export default function EditFxForm() {
           ))}
         </ul>
         <InputContainer>
-          <LabelSpan>Fx Artwork</LabelSpan>
+          <LabelSpan>Click Image to Upload Artwork</LabelSpan>
           <ImageContainer>
             {imageLoading ? (
               <Loader />
