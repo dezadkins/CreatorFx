@@ -313,7 +313,7 @@ export default function ProfilePage() {
                   <User
                     onClick={(e) => {
                       e.preventDefault();
-                      // history.push(`/users/${user.id}`);
+                      history.push(`/users/${user.id}`);
                     }}
                     key={user.id}
                   >

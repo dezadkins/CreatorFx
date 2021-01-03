@@ -38,8 +38,7 @@ const PageContainer = styled.div`
     "side-nav  main-view"
     "side-nav  footer";
   align-content: start;
-  // background-color: #323f4b;
-  align-content: start;
+  // align-content: start;
 `;
 
 const RootContainer = styled.div`
@@ -65,16 +64,16 @@ const RootContainer = styled.div`
 // `;
 
 export default function GridLayout() {
-  const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
-  const [searching, setSearching] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
+  // const [searching, setSearching] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const user = useSelector((state) => state.session.user);
   // const term = useSelector((state) => {
   //   return state.search.term;
   // });
 
-  const history = useHistory();
+  // const history = useHistory();
 
   // useEffect(() => {
   //   if (term === "") {
@@ -88,10 +87,10 @@ export default function GridLayout() {
   //   };
   // }, [term]);
 
-  const handleClick = (e, fx) => {
-    e.preventDefault();
-    setCurrentlyPlaying(fx);
-  };
+  // const handleClick = (e, fx) => {
+  //   e.preventDefault();
+  //   setCurrentlyPlaying(fx);
+  // };
 
   return (
     <>
