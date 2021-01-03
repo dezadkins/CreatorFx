@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import fetch from "../../store/csrf";
 import Loader from "../Loader/Loader";
@@ -180,6 +180,9 @@ export default function OtherProfile({ userId }) {
   const [loading, setLoading] = useState(false);
   const [fxes, setFxes] = useState([]);
   const [profile, setProfile] = useState({});
+  const [profilePic, setProfilePic] = useState(null);
+  const sessionUser = useSelector((state) => state.session.user);
+
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -222,6 +225,13 @@ export default function OtherProfile({ userId }) {
     fetchUser(userId);
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      let res = await fetch(`/api/session`);
+      setProfilePic(res.data.user.profilePicURL);
+    })();
+  }, [sessionUser]);
+
   const handleClick = (e, fx) => {
     e.preventDefault();
     setCurrentlyPlaying(fx);
@@ -231,7 +241,12 @@ export default function OtherProfile({ userId }) {
     <>
       <ProfileContainer>
         <Header>
-          <Avatar src={window.location.origin + "/imagePlaceholder.jpg"} />
+          <Avatar
+            src={
+              profilePic + `?uniqueQuery=${encodeURI(new Date().toISOString())}`
+            }
+          />
+
           <ProfileDetail>
             <ProfileName>{user ? user.username : loading}</ProfileName>
             <ProfileExtra>{fxes.length} uploaded fx</ProfileExtra>
