@@ -7,23 +7,10 @@ import styled from "styled-components";
 import SideNav from "../SideNav";
 import HomePage from "../HomePage";
 import EditFxPage from "../EditFxPage/EditFxPage";
-// import Footer from "../Footer";
+import Footer from "../Footer";
 import UploadFxPage from "../UploadFxPage/UploadFxPage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 
-// const PageContainer = styled.div`
-//   position: relative;
-//   display: grid;
-//   grid-template-rows: 1fr auto 1fr;
-//   // overflow-x: hidden;
-//   grid-template-columns: auto 1fr;
-//   grid-template-areas:
-//     "side-nav  now-playing-bar"
-//     "side-nav  main-view"
-//     "side-nav  footer";
-//   align-content: start;
-//   z-index: 1;
-// `;
 const PageContainer = styled.div`
   min-height: 100%;
   width: 100%;
@@ -49,19 +36,25 @@ const RootContainer = styled.div`
   );
   height: 100%;
   margin: -8px;
+  z-index: -1px;
 `;
 
-// const FooterGrid = styled.div`
-//   display: flex;
-//   align-items: flex-end;
-//   position: fixed;
-//   width: 99%;
-//   height: 100%;
-//   margin-top: 50px;
-//   background-color: transparent;
-//   // border: 1px solid black;
-//   // z-index: 2;
-// `;
+const FooterGrid = styled.div`
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+
+  width: 99%;
+  height: 20%;
+  margin-top: 700px;
+  padding-top: 25px;
+  // margin-bottom: 350px
+  background-color: transparent;
+  // grid-area: footer;
+
+  // border: 1px solid black;
+  z-index: 1;
+`;
 
 export default function GridLayout() {
   // const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
@@ -111,9 +104,9 @@ export default function GridLayout() {
               <ProfilePage></ProfilePage>
             </Route>
           </Switch>
-          {/* <FooterGrid>
+          <FooterGrid>
             <Footer />
-          </FooterGrid> */}
+          </FooterGrid>
         </PageContainer>
       </RootContainer>
     </>

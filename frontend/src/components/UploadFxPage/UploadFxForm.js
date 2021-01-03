@@ -45,7 +45,7 @@ const SubmitButton = styled.button`
   transition: background-color 0.5s;
   transition-timing-function: ease-in-out;
   &:hover {
-    background-color: #c054be;
+    background-color: white;
   }
 `;
 
