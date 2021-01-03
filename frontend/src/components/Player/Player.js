@@ -9,19 +9,10 @@ import styled from "styled-components";
 import "./player.css";
 const PlayerContainer = styled.div`
   grid-area: now-playing-bar;
-  background: linear-gradient(
-    0deg,
-    rgba(176, 158, 158, 1) 0%,
-    rgba(62, 62, 57, 1) 100%
-  );
   padding: 1rem;
   display: flex;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  // border: 1px solid white;
-  width: 100%;
+  width: 85%;
 `;
 
 export const Player = withCustomAudio((props) => {

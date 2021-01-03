@@ -10,13 +10,16 @@ export default function UploadFxPage() {
     align-items: center;
     justify-content: center;
     width: 50%;
+    padding-top: 10%;
     // border: 2px solid blue;
     z-index: 1;
   `;
 
   const PageTitle = styled.h1`
     display: inline;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-family: "Cuprum", sans-serif;
+
     margin-top: 40px;
     margin-bottom: 15px;
     color: #f5f7f9;

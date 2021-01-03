@@ -9,8 +9,9 @@ import "./Profile.css";
 const ProfileContainer = styled.div`
   grid-area: main-view;
   overflow-y: scroll;
-  padding: 30px;
-  height: 100%;
+  // padding: 30px;
+  // height: 100%;
+  margin-top: 38px;
 `;
 const Header = styled.div`
   display: flex;
@@ -34,7 +35,8 @@ const ProfileDetail = styled.div`
 
 const ProfileName = styled.h2`
   display: block;
-  font-size: 90px;
+  font-size: 70px;
+  font-family: "Cuprum", sans-serif;
 
   margin-left: 20px;
   margin-bottom: 20px;
@@ -44,16 +46,17 @@ const ProfileName = styled.h2`
 
 const ProfileExtra = styled.h3`
   display: block;
-  font-size: 12px;
+  font-size: 18px;
+  font-family: "Cuprum", sans-serif;
 
   margin-left: 20px;
   color: #9ea5ad;
 `;
 
 const Avatar = styled.img`
-  width: 225px;
-  height: 225px;
-  border-radius: 125px;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -77,6 +80,7 @@ const SectionTitle = styled.h2`
   display: block;
   font-size: 20px;
   line-height: 64px;
+  font-family: "Cuprum", sans-serif;
 
   color: #f5f7f9;
 `;
@@ -145,6 +149,8 @@ const Artwork = styled.img`
 const FxTitle = styled.h2`
   display: block;
   font-size: 14px;
+  font-family: "Cuprum", sans-serif;
+
   margin-top: 14px;
   margin-bottom: 4px;
 
@@ -154,6 +160,7 @@ const FxTitle = styled.h2`
 const FxArtist = styled.h2`
   display: block;
   font-size: 10px;
+  font-family: "Cuprum", sans-serif;
 
   color: #9ea5ad;
 `;

@@ -5,19 +5,6 @@ import styled from "styled-components";
 import MyProfile from "./MyProfile";
 import OtherProfile from "./OtherProfile";
 
-// const PageContainer = styled.div`
-//   min-height: 100%;
-//   width: 100%;
-//   height: 100%;
-//   position: relative;
-//   display: grid;
-//   grid-template-rows: 1fr auto;
-//   grid-template-columns: auto;
-//   grid-template-areas:
-//     "main-view main-view main-view"
-//     "now-playing-bar now-playing-bar now-playing-bar";
-//   background-color: #323f4b;
-// `;
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;

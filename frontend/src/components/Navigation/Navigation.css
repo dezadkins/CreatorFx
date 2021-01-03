@@ -191,13 +191,13 @@
 
 .navbar__search--closed {
   width: 40px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 5px rgba(208, 200, 200, 0.694);
   transition: background-color 0.2s, all 0.3s;
 }
 
 .navbar__search--open {
   width: 200px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(208, 200, 200, 0.694);
   transition: all 0.5s;
 }
 

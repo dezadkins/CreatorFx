@@ -4,7 +4,8 @@
 
   display: grid;
   grid-template-columns: auto 1fr;
-
+  /* border: 1px solid white; */
+  /* grid-area: footer; */
   color: grey;
 }
 

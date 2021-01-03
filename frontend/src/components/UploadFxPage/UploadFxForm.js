@@ -40,12 +40,14 @@ const SubmitButton = styled.button`
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  font-size: 0.7rem;
+  font-family: "Cuprum", sans-serif;
+
+  font-size: 0.9rem;
   font-weight: bold;
   transition: background-color 0.5s;
   transition-timing-function: ease-in-out;
   &:hover {
-    background-color: white;
+    background-color: rgba(235, 98, 98, 0.324);
   }
 `;
 
@@ -60,11 +62,13 @@ const UploadButton = styled.div`
   height: 33.33px;
   letter-spacing: 0.1rem;
   color: #f5f7f9;
+  font-family: "Cuprum", sans-serif;
+
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: bold;
   transition: background-color 0.5s;
   transition-timing-function: ease-in-out;

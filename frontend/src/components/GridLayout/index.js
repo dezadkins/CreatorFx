@@ -39,51 +39,18 @@ const RootContainer = styled.div`
   z-index: -1px;
 `;
 
-const FooterGrid = styled.div`
-  display: flex;
-  align-items: flex-end;
-  position: fixed;
-
-  width: 99%;
-  height: 20%;
-  margin-top: 700px;
-  padding-top: 25px;
-  // margin-bottom: 350px
-  background-color: transparent;
-  // grid-area: footer;
-
-  // border: 1px solid black;
-  z-index: 1;
-`;
+// const FooterGrid = styled.div`
+//   grid-area: footer;
+//   padding: 1rem;
+//   display: flex;
+//   align-items: center;
+//   width: 95%;
+//   margin-bottom: 65px;
+//   height: 2vh;
+// `;
 
 export default function GridLayout() {
-  // const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
-  // const [searching, setSearching] = useState(false);
-  // const [loading, setLoading] = useState(false);
-
   const user = useSelector((state) => state.session.user);
-  // const term = useSelector((state) => {
-  //   return state.search.term;
-  // });
-
-  // const history = useHistory();
-
-  // useEffect(() => {
-  //   if (term === "") {
-  //     setSearching(false);
-  //   } else {
-  //     setSearching(true);
-  //   }
-
-  //   return function cleanup() {
-  //     setSearching(false);
-  //   };
-  // }, [term]);
-
-  // const handleClick = (e, fx) => {
-  //   e.preventDefault();
-  //   setCurrentlyPlaying(fx);
-  // };
 
   return (
     <>
@@ -104,9 +71,9 @@ export default function GridLayout() {
               <ProfilePage></ProfilePage>
             </Route>
           </Switch>
-          <FooterGrid>
+          {/* <FooterGrid>
             <Footer />
-          </FooterGrid>
+          </FooterGrid> */}
         </PageContainer>
       </RootContainer>
     </>

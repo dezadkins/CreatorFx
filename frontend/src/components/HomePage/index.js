@@ -3,48 +3,13 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import styled from "styled-components";
+import Footer from "../Footer";
 
 import fetch from "../../store/csrf";
 import Loader from "../Loader/Loader";
 import { Player } from "../Player/Player";
-// import Search from "../Search/Search";
 import SearchResults from "../Navigation/SearchResults";
-// import SearchBar from "../Navigation/SearchBar";
 
-// const PageContainer = styled.div`
-//   position: relative;
-//   display: grid;
-//   grid-template-rows: 1fr auto 1fr;
-//   // overflow-x: hidden;
-//   grid-template-columns: auto 1fr;
-//   grid-template-areas:
-//     "side-nav  now-playing-bar"
-//     "side-nav  main-view"
-//     "side-nav  footer";
-//   align-content: start;
-//   // z-index: 1;
-// `;
-
-// const PageContainer = styled.div`
-//   // min-height: 100%;
-//   // width: 100%;
-//   // height: 100%;
-//   // position: relative;
-//   // display: grid;
-//   // grid-template-rows: auto 1fr auto;
-//   // grid-template-columns: auto 1fr;
-//   // grid-template-areas:
-//   //   "side-nav  now-playing-bar"
-//   //   "side-nav  main-view";
-//   // "side-nav  footer";
-//   // background: rgb(176, 158, 158);
-//   // background: linear-gradient(
-//   //   0deg,
-//   //   rgba(176, 158, 158, 1) 0%,
-//   //   rgba(62, 62, 57, 1) 100%
-//   // );
-//   // align-content: start;
-// `;
 const Main = styled.div`
   display: flex;
   padding: 30px;
@@ -67,8 +32,9 @@ const Section = styled.div`
 `;
 const SectionTitle = styled.h2`
   display: block;
-  font-size: 20px;
+  font-size: 28px;
   line-height: 64px;
+  font-family: "Cuprum", sans-serif;
 
   color: #f5f7f9;
 `;
@@ -154,16 +120,21 @@ const UserImage = styled.img`
 `;
 const FxTitle = styled.h2`
   display: flex;
-  // align-items: center;
-  font-size: 14px;
+  justify-content: center
+  align-items: center;
+  font-size: 18px;
   margin-top: 14px;
   margin-bottom: 4px;
-  width: 100px;
+  width: 100%;
   color: #f5f7f9;
+  font-family: "Cuprum", sans-serif;
+  
 `;
 const FxArtist = styled.h2`
-  display: block;
-  font-size: 10px;
+  display: flex;
+  // justify-content: center;
+  font-size: 14px;
+  font-family: "Cuprum", sans-serif;
 
   color: #9ea5ad;
 `;
@@ -175,6 +146,22 @@ const SectionContent = styled.div`
   flex-direction: row;
   margin-bottom: 0px;
   min-height: 233px;
+  // z-index: 1;
+`;
+const FooterGrid = styled.div`
+  // display: flex;
+  // align-items: flex-end;
+  // position: fixed;
+
+  // width: 90%;
+  // height: 20%;
+  // // margin-top: 700px;
+  // // padding-top: 25px;
+  // // margin-bottom: 350px
+  background-color: transparent;
+  // grid-area: footer;
+
+  // border: 1px solid green;
   // z-index: 1;
 `;
 
@@ -263,14 +250,12 @@ export default function ProfilePage() {
 
   return (
     <>
-      {/* <PageContainer> */}
-
       {searching ? (
         <SearchResults setCurrentlyPlaying={setCurrentlyPlaying} />
       ) : (
         <Main>
           <Section>
-            <SectionTitle>Trending </SectionTitle>
+            <SectionTitle>Newly Added </SectionTitle>
             <SectionContent>
               {loading ? (
                 <Loader></Loader>
@@ -344,7 +329,6 @@ export default function ProfilePage() {
           preloadType="auto"
         />
       ) : null}
-      {/* </PageContainer> */}
     </>
   );
 }
