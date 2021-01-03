@@ -1,12 +1,12 @@
 .side__nav-logo {
   max-width: 200px;
-  max-height: 70px;
+  max-height: 90px;
   padding-left: 10px;
 }
 
 .sidebar {
   height: 100vh;
-  width: 200px;
+  width: 100%;
   background: rgb(176, 158, 158);
   background: linear-gradient(
     0deg,
