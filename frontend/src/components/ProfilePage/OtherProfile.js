@@ -241,7 +241,12 @@ export default function OtherProfile({ userId }) {
     <>
       <ProfileContainer>
         <Header>
-          <Avatar src={window.location.origin + "/imagePlaceholder.jpg"} />
+          {user.profilePicURL && (
+            <Avatar src={user.profilePicURL} alt="avatar" />
+          )}
+          {!user.profilePicURL && (
+            <Avatar src={window.location.origin + "/imagePlaceholder.jpg"} />
+          )}
 
           <ProfileDetail>
             <ProfileName>{user ? user.username : loading}</ProfileName>

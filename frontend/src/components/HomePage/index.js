@@ -20,7 +20,7 @@ const Main = styled.div`
     rgba(62, 62, 57, 1) 100%
   );
   grid-area: main-view;
-  // overflow-y: scroll;
+  overflow-y: scroll;
   margin-left: 10px;
 `;
 const Section = styled.div`
@@ -286,10 +286,14 @@ export default function ProfilePage() {
                     }}
                     key={user.id}
                   >
-                    <UserImage
-                      src={window.location.origin + "/imagePlaceholder.jpg"}
-                      alt="avatar"
-                    />
+                    {user.profilePicURL && (
+                      <UserImage src={user.profilePicURL} alt="avatar" />
+                    )}
+                    {!user.profilePicURL && (
+                      <UserImage
+                        src={window.location.origin + "/imagePlaceholder.jpg"}
+                      />
+                    )}
                     <FxTitle>
                       {" "}
                       {user.username.length > 20
