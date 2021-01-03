@@ -12,7 +12,8 @@ const PlayerContainer = styled.div`
   padding: 1rem;
   display: flex;
   align-items: center;
-  width: 85%;
+  width: 78%;
+  z-index: 1;
 `;
 
 export const Player = withCustomAudio((props) => {

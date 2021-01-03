@@ -23,7 +23,8 @@
   width: 98%;
   height: 40px;
   cursor: pointer;
-  padding-top: 15px;
+  /* padding-top: 15px; */
+  z-index: 1;
 }
 
 .navbar__user-container-dropdown {
