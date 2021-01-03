@@ -22,6 +22,7 @@ const LabelSpan = styled.span`
   color: #9ea5ad;
   margin-bottom: 10px;
   font-size: 1rem;
+  font-family: "Cuprum", sans-serif;
 `;
 
 const Input = styled.input`
@@ -48,13 +49,15 @@ const SubmitButton = styled.button`
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: bold;
+  font-family: "Cuprum", sans-serif;
+
   width: 100%;
   transition: background-color 0.5s;
   transition-timing-function: ease-in-out;
   &:hover {
-    background-color: #c054be;
+    background-color: rgba(235, 98, 98, 0.324);
   }
 `;
 
@@ -93,6 +96,8 @@ const UploadText = styled.span`
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-size: 0.7rem;
   font-weight: bold;
+  font-family: "Cuprum", sans-serif;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,6 +116,8 @@ const UploadButton = styled.img`
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-size: 0.7rem;
   font-weight: bold;
+  font-family: "Cuprum", sans-serif;
+
   &:hover ${UploadDisplay} {
     visibility: visible;
     display: flex;
@@ -135,6 +142,8 @@ const Divider = styled.div`
 const DividerTitle = styled.strong`
   background-color: #323f4b;
   font-size: 12px;
+  font-family: "Cuprum", sans-serif;
+
   letter-spacing: 1px;
   padding: 0 20px;
   color: #9ea5ad;

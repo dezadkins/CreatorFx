@@ -228,21 +228,21 @@ const NotFound = styled.div`
 const NotFoundTitle = styled.h2`
   display: block;
   font-size: 17px;
-  font-size: 70px;
+
   font-family: "Cuprum", sans-serif;
   line-height: 17px;
   text-align: left;
-  color: #9ea5ad;
+  color: #ff0031;
 `;
 
 const NotFoundDescription = styled.h3`
   display: block;
   font-size: 14px;
-  font-size: 70px;
+
   font-family: "Cuprum", sans-serif;
   line-height: 16px;
   text-align: center;
-  color: #9ea5ad;
+  color: #ff0031;
 `;
 
 export default function MyProfile({ userId }) {
@@ -372,10 +372,9 @@ export default function MyProfile({ userId }) {
                 ))
               ) : (
                 <NotFound>
-                  <NotFoundTitle>No Uploaded Fx</NotFoundTitle>
+                  <NotFoundTitle> No Uploaded Fx</NotFoundTitle>
                   <NotFoundDescription>
-                    Click on the menu button in the upper right hand side to
-                    share the love.
+                    Click on the upload button to start your collection!
                   </NotFoundDescription>
                 </NotFound>
               )}

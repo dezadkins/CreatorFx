@@ -26,7 +26,7 @@ export default function UploadFxPage() {
   `;
   return (
     <PageContainer>
-      <PageTitle>Upload your Fx!</PageTitle>
+      <PageTitle>CREATE FX</PageTitle>
       <UploadFxForm />
     </PageContainer>
   );
