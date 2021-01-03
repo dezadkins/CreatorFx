@@ -25,6 +25,8 @@ const Section = styled.div`
 const SectionTitle = styled.h2`
   display: block;
   font-size: 20px;
+  font-family: "Cuprum", sans-serif;
+
   line-height: 64px;
 
   color: #f5f7f9;
@@ -60,6 +62,7 @@ const PlayText = styled.span`
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-size: 0.7rem;
   font-weight: bold;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +119,8 @@ const UserImage = styled.img`
 const FxTitle = styled.h2`
   display: block;
   font-size: 14px;
+  font-family: "Cuprum", sans-serif;
+
   margin-top: 14px;
   margin-bottom: 4px;
   width: 100px;
@@ -125,6 +130,7 @@ const FxTitle = styled.h2`
 const FxArtist = styled.h2`
   display: block;
   font-size: 10px;
+  font-family: "Cuprum", sans-serif;
 
   color: #9ea5ad;
 `;
@@ -147,14 +153,16 @@ const NotFound = styled.div`
 const NotFoundTitle = styled.h2`
   display: block;
   font-size: 17px;
+  font-family: "Cuprum", sans-serif;
   line-height: 17px;
   text-align: left;
-  color: #9ea5ad;
+  color: #ff0031;
 `;
 
 const NotFoundDescription = styled.h3`
   display: block;
   font-size: 14px;
+  font-family: "Cuprum", sans-serif;
   line-height: 16px;
   text-align: center;
   color: #9ea5ad;

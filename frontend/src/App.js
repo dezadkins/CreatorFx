@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation/";
 import LandingPage from "./components/LandingPage";
 // import HomePage from "./components/HomePage";
 import GridLayout from "./components/GridLayout";
+import AboutPage from "./components/AboutPage/AboutPage";
 // import styled from "styled-components";
 // import UploadFxPage from "./components/UploadFxPage";
 // import SideNav from "./components/SideNav";
@@ -38,6 +39,9 @@ function App() {
           <GridLayout />
         </Route>
         <Route path="/users/:userId">
+          <GridLayout />
+        </Route>
+        <Route path="/aboutus">
           <GridLayout />
         </Route>
       </Switch>

@@ -148,22 +148,6 @@ const SectionContent = styled.div`
   min-height: 233px;
   // z-index: 1;
 `;
-const FooterGrid = styled.div`
-  // display: flex;
-  // align-items: flex-end;
-  // position: fixed;
-
-  // width: 90%;
-  // height: 20%;
-  // // margin-top: 700px;
-  // // padding-top: 25px;
-  // // margin-bottom: 350px
-  background-color: transparent;
-  // grid-area: footer;
-
-  // border: 1px solid green;
-  // z-index: 1;
-`;
 
 export default function ProfilePage() {
   //State
