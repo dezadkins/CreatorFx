@@ -22,6 +22,8 @@ function LoginForm() {
       sessionActions.loginUser({
         credential: "demo@user.io",
         password: "password",
+        profilePicURL:
+          "https://creatorfx.s3.us-east-2.amazonaws.com/buddy.jpeg",
       })
     ).catch((res) => {
       if (res.data && res.data.errors) setErrors(res.data.errors);

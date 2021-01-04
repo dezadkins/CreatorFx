@@ -335,11 +335,17 @@ export default function MyProfile({ userId }) {
     <>
       <ProfileContainer>
         <Header>
-          <Avatar
-            src={
-              profilePic + `?uniqueQuery=${encodeURI(new Date().toISOString())}`
-            }
-          />
+          {profilePic && (
+            <Avatar
+              src={
+                profilePic +
+                `?uniqueQuery=${encodeURI(new Date().toISOString())}`
+              }
+            />
+          )}
+          {!profilePic && (
+            <Avatar src={window.location.origin + "/imagePlaceholder.jpg"} />
+          )}
           <ProfileDetail>
             <ProfileName>{user ? user.username : loading}</ProfileName>
             <ProfileExtra>{fxes.length} uploaded fx</ProfileExtra>
