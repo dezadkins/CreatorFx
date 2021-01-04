@@ -11,6 +11,7 @@ import Footer from "../Footer";
 import UploadFxPage from "../UploadFxPage/UploadFxPage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 import AboutPage from "../AboutPage/AboutPage";
+import NewCollection from "../NewCollection/NewCollection";
 
 const PageContainer = styled.div`
   min-height: 100%;
@@ -71,8 +72,11 @@ export default function GridLayout() {
             <Route path="/users/:userId">
               <ProfilePage></ProfilePage>
             </Route>
-            <Route path="/">
+            <Route path="/about">
               <AboutPage />
+            </Route>
+            <Route path="/newcollection">
+              <NewCollection />
             </Route>
           </Switch>
           {/* <FooterGrid>

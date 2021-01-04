@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation/";
 import LandingPage from "./components/LandingPage";
 import GridLayout from "./components/GridLayout";
+import NewCollection from "./components/NewCollection/NewCollection";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
           <GridLayout />
         </Route>
         <Route path="/about">
+          <GridLayout />
+        </Route>
+        <Route path="/newcollection">
           <GridLayout />
         </Route>
       </Switch>
