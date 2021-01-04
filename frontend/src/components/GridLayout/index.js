@@ -71,7 +71,7 @@ export default function GridLayout() {
             <Route path="/users/:userId">
               <ProfilePage></ProfilePage>
             </Route>
-            <Route path="/aboutus">
+            <Route path="/">
               <AboutPage />
             </Route>
           </Switch>

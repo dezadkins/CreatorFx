@@ -15,16 +15,6 @@ function LoginForm() {
 
   if (sessionUser) return <Redirect to="/home" />;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrors([]);
-    return dispatch(sessionActions.loginUser({ credential, password })).catch(
-      (res) => {
-        if (res.data && res.data.errors) setErrors(res.data.errors);
-      }
-    );
-  };
-
   const loginDemo = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -36,6 +26,15 @@ function LoginForm() {
     ).catch((res) => {
       if (res.data && res.data.errors) setErrors(res.data.errors);
     });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(sessionActions.loginUser({ credential, password })).catch(
+      (res) => {
+        if (res.data && res.data.errors) setErrors(res.data.errors);
+      }
+    );
   };
 
   return (
@@ -55,9 +54,9 @@ function LoginForm() {
       )}
       <div className="login-form__input-fields">
         <div className="demo-container">
-          <button className="demo-button" onClick={loginDemo}>
+          <div className="demo-button" onClick={loginDemo}>
             Log in as Demo User
-          </button>
+          </div>
         </div>
         <div className="demo-divider">
           <strong className="divider-title">OR</strong>
@@ -78,9 +77,13 @@ function LoginForm() {
           onChange={({ target }) => setPassword(target.value)}
         />
       </div>
-      <div className="button button--primary" onClick={handleSubmit}>
+      <button
+        type="submit"
+        className="button button--primary"
+        onClick={handleSubmit}
+      >
         Log In
-      </div>
+      </button>
     </form>
   );
 }

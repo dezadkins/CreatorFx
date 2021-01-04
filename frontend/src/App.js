@@ -41,7 +41,7 @@ function App() {
         <Route path="/users/:userId">
           <GridLayout />
         </Route>
-        <Route path="/aboutus">
+        <Route path="/about">
           <GridLayout />
         </Route>
       </Switch>

@@ -11,9 +11,11 @@
   align-items: center;
 }
 .demo-container .demo-button {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
   box-sizing: border-box;
-  /* width: 300px; */
+
   width: 100%;
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -36,7 +38,7 @@
   font-size: 12px;
   letter-spacing: 1px;
   padding: 0 20px;
-  color: #000000;
+  color: #f2e6e6;
   /* text-transform: uppercase; */
 }
 
@@ -127,7 +129,9 @@
 .button--primary {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: black;
+  background-color: white;
   width: 15%;
   height: 30px;
   padding: 5px 5px;
