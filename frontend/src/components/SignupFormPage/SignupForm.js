@@ -29,14 +29,12 @@ export default function SignupForm() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [profilePic, setProfilePic] = useState(null);
-  // const [profilePicPreview, setProfilePicPreview] = useState(null)
+
   const [errors, setErrors] = useState([]);
   const [sending, setSending] = useState(false);
 
@@ -91,20 +89,6 @@ export default function SignupForm() {
       )}
       <div className="signup-form__inputs-container">
         <div className="signup-form__input-fields">
-          {/* <FormInput
-            name="First Name"
-            required={true}
-            type="text"
-            value={firstName}
-            onChange={({ target }) => setFirstName(target.value)}
-          />
-          <FormInput
-            name="Last Name"
-            required={true}
-            type="text"
-            value={lastName}
-            onChange={({ target }) => setLastName(target.value)}
-          /> */}
           <FormInput
             name="Email"
             required={true}

@@ -10,7 +10,6 @@ const style = {
   borderRadius: 50,
   display: "inline-block",
   background: "white",
-  // #c054eb
 };
 
 const variants = {

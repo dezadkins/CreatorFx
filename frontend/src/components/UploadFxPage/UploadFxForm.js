@@ -106,7 +106,7 @@ export default function UploadFxForm(props) {
       );
 
       if (audio) formData.append("audio", audio);
-      // console.log(formData.get("audio"));
+
       const res = await fetch("/api/fxes", {
         method: "POST",
         body: formData,

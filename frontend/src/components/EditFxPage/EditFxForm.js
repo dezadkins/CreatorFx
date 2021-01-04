@@ -197,7 +197,7 @@ export default function EditFxForm() {
         const formData = new FormData();
         formData.append("title", title);
         if (artwork) formData.append("artwork", artwork);
-        // console.log(formData.get("audio"));
+        
         const res = await fetch(`/api/fxes/${fxId}`, {
           method: "PUT",
           body: formData,
@@ -225,7 +225,7 @@ export default function EditFxForm() {
       const formData = new FormData();
       formData.append("title", title);
       if (artwork) formData.append("artwork", artwork);
-      // console.log(formData.get("audio"));
+     
       const res = await fetch(`/api/fxes/${fxId}`, {
         method: "PUT",
         body: formData,

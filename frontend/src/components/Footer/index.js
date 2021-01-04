@@ -15,11 +15,6 @@ export default function Footer() {
       </div>
       <div className="footer__links">
         <div className="footer__links-left">
-          {/* <h1 style={{ fontWeight: "bold" }}>References</h1>
-
-          <a target="_blank" rel="noreferrer" href="https://soundcloud.com/">
-            SoundCloud
-          </a> */}
           <h4 style={{ color: "white" }}>&copy; Copyright 2021</h4>
         </div>
         <div className="footer__links-right">
