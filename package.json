@@ -1,0 +1,19 @@
+{
+  "name": "creatorfx",
+  "version": "1.0.0",
+  "description": "![](frontend/public/CFxLogo.png)                                                                                                                                                                                                <br> **CreatorFx** Community of sound creators. # Built With",
+  "main": "NAVBAR2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dezadkins/CreatorFx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dezadkins/CreatorFx/issues"
+  },
+  "homepage": "https://github.com/dezadkins/CreatorFx#readme"
+}
