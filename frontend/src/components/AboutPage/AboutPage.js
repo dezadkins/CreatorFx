@@ -45,15 +45,15 @@ export default function AboutPage() {
         </HeaderDiv>
         <SectionDiv>
           <p>
-            An exclusively effects platform, CreatorFx lets people discover and
-            enjoy a large selection of sound fx from a diverse creative
-            community. Launched in 2020, the platform hopes to become renowned
-            for its unique content and features, including the ability to share
-            sound effects and connect directly with creators, and users alike.
-            This is made possible by an open platform that directly connects
-            creators and users across the globe. Film makers and audio creators
-            can use CreatorFx to both share and monetise their content with a
-            global audience. CreatorFx will continue to update the site.
+            An exclusively sound effects platform, CreatorFx lets people
+            discover and enjoy a large selection of sound fx from a diverse
+            creative community. Launched in 2020, the platform hopes to become
+            renowned for its unique content and features, including the ability
+            to share sound effects and connect directly with creators, and users
+            alike. This is made possible by an open platform that directly
+            connects creators and users across the globe. Film makers and audio
+            creators can use CreatorFx to both share and monetise their content
+            with a global audience. CreatorFx will continue to update the site.
           </p>
         </SectionDiv>
         <FooterDiv>
