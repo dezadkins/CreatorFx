@@ -4,6 +4,9 @@
   "description": "![](frontend/public/CFxLogo.png)                                                                                                                                                                                                <br> **CreatorFx** Community of sound creators. # Built With",
   "main": "NAVBAR2.js",
   "scripts": {
+    "heroku-postbuild": "npm run build --prefix frontend",
+    "sequelize": "npm run --prefix backend sequelize",
+    "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
